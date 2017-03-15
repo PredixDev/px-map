@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Map Demo -- Simple Popup Info</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../polymer/polymer-mini.html" />
+
+  <!-- Importing px-map subcomponents... -->
+  <link rel="import" href="../px-map.html" />
+  <link rel="import" href="../px-map-tile-layer.html" />
+  <link rel="import" href="../px-map-marker-static.html" />
+  <link rel="import" href="../px-map-popup-data.html" />
+</head>
+
+<style is="custom-style">
+  body {
+    margin: 0;
+  }
+  .wrap {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    margin: 5vh 5vw;
+  }
+</style>
+<body>
+  <section class="wrap">
+    <px-map zoom="14" flex-to-size>
+      <!-- Uses the Open Street Map (OSM) tiles for base layer -->
+      <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+      <!-- Places a marker on the map -->
+      <px-map-marker-static lat="37.7673626" lng="-121.9595048" type="info" show-badge>
+      <!-- Places a data popup on the marker -->
+        <px-map-popup-data
+          title="GE Digital"
+          data='{ "Employees" : "2000", "Parking" : "Yes", "Snacks" : "Yes", "Gym" : "No" }'>
+        </px-map-popup-data>
+      </px-map-marker-static>
+
+    </px-map>
+  </section>
+</body>
+</html>

@@ -17,7 +17,7 @@
   background-color: $primary-blue;
   border-radius: 100%;
   position: absolute;
-  border: 2px solid var(--px-map-static-icon-border-color, white);
+  border: 2px solid var(--px-map-static-icon-border-color, $gray1);
 }
 
 // ICON DESCENDER
@@ -27,7 +27,7 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 15px 5px 0 5px;
+  border-width: 17px 5px 0;
   border-color: $primary-blue transparent transparent transparent;
   position: absolute;
   left: 5px;
@@ -39,12 +39,12 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 22px 7px 10px;
-    border-color: var(--px-map-static-icon-border-color, white) transparent transparent;
+    border-width: 23px 8px 0px;
+    border-color: var(--px-map-static-icon-border-color, $gray1) transparent transparent;
     position: absolute;
     z-index: -1;
-    left: -7px;
-    top: -19px;
+    left: -8px;
+    top: -17px;
     transform: scaleY(1.1);
   }
 }
@@ -96,7 +96,7 @@
   width: 14px;
   height: 14px;
   background-color: $primary-blue;
-  border: 2px solid var(--px-map-static-icon-border-color, white);
+  border: 2px solid var(--px-map-static-icon-border-color, $gray1);
   transform: rotate(45deg);
   position: absolute;
   left: 10px;
@@ -112,7 +112,7 @@
   height: 0;
   border-style: solid;
   border-width: 0 8px 16px 8px;
-  border-color: transparent transparent var(--px-map-static-icon-border-color, white) transparent;
+  border-color: transparent transparent var(--px-map-static-icon-border-color, $gray1) transparent;
 
   &:after {
     content: '';

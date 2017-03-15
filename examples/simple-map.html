@@ -10,6 +10,7 @@
   <link rel="import" href="../px-map.html" />
   <link rel="import" href="../px-map-tile-layer.html" />
   <link rel="import" href="../px-map-control-zoom.html" />
+  <link rel="import" href="../px-map-control-scale.html" />
 </head>
 
 <style is="custom-style">
@@ -28,7 +29,9 @@
     <px-map zoom="10" lat="37.7749" lng="-122.4312" flex-to-size>
       <!-- Uses the Open Street Map (OSM) tiles for base layer -->
       <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
-      <!-- Positions a zoom control in the bottomright -->
+      <!-- Adds a scale with imperial units in the bottom left corner -->
+      <px-map-control-scale position="bottomleft" imperial-units></px-map-control-scale>
+      <!-- Adds a zoom control in the bottom right corner -->
       <px-map-control-zoom position="bottomright"></px-map-control-zoom>
     </px-map>
   </section>

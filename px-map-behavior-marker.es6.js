@@ -15,7 +15,7 @@
   const MarkerImpl = {
     properties: {
       /**
-       * The latitude of the marker. Set a value to draw the maker at a coordinate
+       * The latitude of the marker. Set a value to draw the marker at a coordinate
        * when the map is loaded. Listen for updates to track the marker's location
        * if the marker is draggable or created dynamically by the user.
        *
@@ -28,7 +28,7 @@
       },
 
       /**
-       * The longitude of the marker. Set a value to draw the maker at a coordinate
+       * The longitude of the marker. Set a value to draw the marker at a coordinate
        * when the map is loaded. Listen for updates to track the marker's location
        * if the marker is draggable or created dynamically by the user.
        *

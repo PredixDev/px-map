@@ -9,22 +9,25 @@
 <link rel="import" href="px-map-behavior-control.html">
 
 <!--
-The zoom control creates a set of buttons the user can tap to zoom in or out
-of the map.
+...
 
 ### Usage
 
     <px-map>
-      <px-map-control-zoom position="topright"></px-map-control-zoom>
+      <px-map-control-scale imperial-units position="bottomright"></px-map-control-scale>
     </px-map>
 
-@element px-map-control-zoom
+You must specify at least one unit type for the scale or it will not be drawn.
+Set one or both of the `imperialUnits` or `metricUnits` attributres. Using
+both scales at the same time is supported.
+
+@element px-map-control-scale
 @blurb ...
 @homepage index.html
 @demo index.html
 -->
 
-<dom-module id="px-map-control-zoom">
+<dom-module id="px-map-control-scale">
   <template></template>
 </dom-module>
-<script src="dist/px-map-control-zoom.js"></script>
+<script src="dist/px-map-control-scale.js"></script>

@@ -113,6 +113,10 @@
             marker: undefined
           }
         }
+      },
+
+      clusterConfig: {
+        type: Object
       }
     },
 
@@ -150,15 +154,38 @@
     },
 
     getInstOptions() {
-      return {
+      // Set the default cluster options
+      const defaultOptions = {
+        showCoverageOnHover: true,
         maxClusterRadius: 150,
         spiderifyOnMaxZoom: true,
-        data: this.data,
-        iconCreateFunction: this.iconFns.cluster || this._createClusterIcon.bind(this)
+        removeOutsideVisibleBounds: true,
+        animate: true,
+        polygonOptions: {
+          stroke: true,
+          color: this.getComputedStyleValue('--px-map-marker-group-cluster-polygon-stroke-color'),
+          fillColor: this.getComputedStyleValue('--px-map-marker-group-cluster-polygon-fill-color'),
+          fillOpacity: 0.4
+        }
       };
+      // Overwrite with any developer-provided cluster options in `clusterConfig`
+      const options = Object.assign(defaultOptions, (this.clusterConfig || {}));
+      // Assign the `data` and `iconCreateFunction` options. These cannot be
+      // configured through the `clusterConfig` attribture
+      options.data = this.data;
+      options.iconCreateFunction = this._createClusterIcon.bind(this);
+      // Return the options composed together
+      return options;
     },
 
     _createClusterIcon(cluster) {
+      // If the developer supplies a `iconFns.cluster` function, pass the options
+      // to that function and return the result.
+      if (this.iconFns.cluster) {
+        return this.iconFns.cluster.call(this, cluster);
+      }
+
+      // Otherwise, build the marker ourselves
       const markers = cluster.getAllChildMarkers();
       const count = markers.length;
 
@@ -193,14 +220,14 @@
 
       const computedVal = this.getComputedStyleValue(styleValName);
 
-      try {
+      if (computedVal && computedVal.indexOf('px') !== -1) {
         const valWithoutSuffix = computedVal.replace('px','');
         const valAsNum = Math.floor(valWithoutSuffix);
         this.__styleVals[styleValName] = valAsNum;
         return valAsNum;
-      } catch (e) {
+      } else {
         return undefined;
-      };
+      }
     },
 
     _getClusterIconSize(count) {
@@ -372,8 +399,8 @@
 
       // If any icon settings were passed with the feature, fetch them to pass
       // to the icon constructor
-      const iconSettings = (feature.properties['marker-icon']) ? this._extractIconSettings(feature.properties['marker-icon']) : {};
-      const icon = this.iconFns.marker ? this.iconFns.marker.call(this, iconSettings) : this._createMarkerIcon(iconSettings);
+      const iconSettings = (feature.properties['marker-icon']) ? this._extractMarkerIconSettings(feature.properties['marker-icon']) : {};
+      const icon = this._createMarkerIcon(iconSettings);
       marker.setIcon(icon);
 
       // Attach the properties to the marker instance to read later
@@ -382,25 +409,36 @@
       return marker;
     },
 
-    _extractIconSettings(featSettings) {
+    _extractMarkerIconSettings(featSettings) {
       const featSettingsKeys = Object.keys(featSettings);
       if (!featSettingsKeys.length) return undefined;
 
       const iconSettings = {};
-      let i, len, featKey, featKeyCamelized;
+      let i, len, featKeyCamelized;
 
       for (i=0, len=featSettingsKeys.length; i<len; i++) {
-        featKey = featSettingsKeys[i];
-        if (featKey.substring(0,5) !== "icon-") continue;
-        featKeyCamelized = featKey.substring(5).replace(/(\-[a-z])/g, (match, captured) => captured.charAt(1).toUpperCase());
-        iconSettings[featKeyCamelized] = featSettings[featKey];
+        if (featSettingsKeys[i].substring(0,5) !== "icon-") continue;
+        featKeyCamelized = featSettingsKeys[i].substring(5).replace(/(\-[a-z])/g, (match) => match.charAt(1).toUpperCase());
+        iconSettings[featKeyCamelized] = featSettings[featSettingsKeys[i]];
       }
 
       return iconSettings;
     },
 
     _createMarkerIcon(options) {
-      return new PxMap.StaticIcon(options);
+      // If the developer supplies a `iconFns.marker` function, pass the options
+      // to that function and return the result.
+      if (this.iconFns.marker) {
+        return this.iconFns.marker.call(this, options);
+      }
+      // Otherwise, attempt to convert the feature's 'icon-base' to a klass name
+      // and call the constructor for that klass
+      const klassName = options.base ? this._strToKlassName(options.base) : 'StaticIcon';
+      return new PxMap[klassName](options);
+    },
+
+    _strToKlassName(str) {
+      return str.charAt(0).toUpperCase() + str.substring(1).replace(/(\-[a-z])/g, (match) => match.charAt(1).toUpperCase());
     },
 
     /**

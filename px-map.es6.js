@@ -143,7 +143,7 @@
         fitToMarkers: {
           type: Boolean,
           value: false,
-          observer: '_fitMapToMakers'
+          observer: '_fitMapToMarkers'
         },
 
         // ---------------------------------------------------------------------
@@ -178,15 +178,15 @@
       window.requestAnimationFrame(this._drawMap.bind(this,0,10));
 
       if (this.fitToMarkers) {
-        this.listen(this, 'px-map-marker-add', '_fitMapToMakers');
-        this.listen(this, 'px-map-marker-group-add', '_fitMapToMakers');
+        this.listen(this, 'px-map-marker-add', '_fitMapToMarkers');
+        this.listen(this, 'px-map-marker-group-add', '_fitMapToMarkers');
       }
     }
 
     detached() {
       if (this.fitToMarkers) {
-        this.unlisten(this, 'px-map-marker-add', '_fitMapToMakers');
-        this.listen(this, 'px-map-marker-group-add', '_fitMapToMakers');
+        this.unlisten(this, 'px-map-marker-add', '_fitMapToMarkers');
+        this.listen(this, 'px-map-marker-group-add', '_fitMapToMarkers');
       }
     }
 
@@ -199,7 +199,7 @@
      * 2. Any marker fires a 'px-map-marker-add' event that bubbles up to the map
      * 3. The map is first drawn
      */
-    _fitMapToMakers() {
+    _fitMapToMarkers() {
       if (this.elementInst && this.fitToMarkers) {
 
         const fitFn = () => {
@@ -293,7 +293,7 @@
       this._updateMapView();
 
       // Try to fit to map markers if the `fitToMarkers` attribute was set
-      this._fitMapToMakers();
+      this._fitMapToMarkers();
     }
 
     _handleMapMove() {

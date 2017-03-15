@@ -49,8 +49,10 @@
 
   --px-map-marker-group-cluster-path-size: 10px;
   --px-map-marker-group-cluster-border-size: 5px;
-
   --px-map-marker-group-cluster-font-size: 15px;
+
+  --px-map-marker-group-cluster-polygon-stroke-color: $dv-light-blue;
+  --px-map-marker-group-cluster-polygon-fill-color: $dv-basic-blue;
 }
 
 /*
@@ -169,11 +171,6 @@
 
 // MAP CONTROL: ZOOM
 
-// Directly overwrite leaflet classes
-// .leaflet-touch .leaflet-control-layers,
-// .leaflet-touch .leaflet-bar,
-// .leaflet-control-zoom
-
 .leaflet-bar.leaflet-control.leaflet-control-zoom {
   border: none;
   border-radius: 0;
@@ -191,15 +188,56 @@
   a.leaflet-control-zoom-out i {
     position: relative;
     left: -0.03rem;
-    // top: .55rem;
-  }
-  // Push the minus icon down a bit
-  a.leaflet-control-zoom-out i {
-    // top: .59rem;
   }
 }
 
-/* CONTROL: Info control */
+// MAP CONTROL: SCALE
+
+// Set background and border style
+.leaflet-control-scale-line {
+  background: none;
+  font-size: $inuit-base-font-size;
+  border-width: 1px;
+  border-color: $black;
+
+  &:not(:first-child) {
+    border-top: 1px solid $black;
+    border-bottom: none;
+    margin-top: -1px;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    border-bottom: 1px solid $black;
+  }
+}
+
+// Set the styles for the `reverse` modifier (for dark backgrounds)
+.leaflet-control-scale.leaflet-control-scale--reverse {
+  background-color: rgba($black, 0.4);
+  padding: 3px;
+}
+.leaflet-control-scale--reverse .leaflet-control-scale-line {
+  color: white;
+  border-color: $white;
+
+  &:not(:first-child) {
+    border-top-color: $white;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    border-bottom-color: $white;
+  }
+}
+
+// Set margins to be the same as other elements
+.leaflet-left .leaflet-control-scale {
+  margin-left: 10px;
+}
+.leaflet-bottom .leaflet-control-scale {
+  margin-bottom: 10px;
+}
+
+// MAP CONTROL: INFO
 
 .map-info-control {
   background-color: white;
@@ -211,8 +249,6 @@
 .map-info-control .map-data-box {
   border: 1px solid $gray4;
 }
-
-
 
 /*******************************************************************************
  * GENERIC BOXES
@@ -285,80 +321,19 @@
 }
 
 /*******************************************************************************
- * VENDOR: PRUNE CLUSTER (TEMPORARY)
+ * MARKER CLUSTER
  *
- * Temporarily copying the PruneCluster plugin CSS before we rewrite it ourselves
- * to get the styles into the map scope.
+ * Styles the underlying pieces of marer-group's marker clusters that are not
+ * styled through configuration in the component.
  ******************************************************************************/
 
-.prunecluster {
-	font-size: 12px;
-	border-radius: 20px;
-	transition: all 0.3s linear;
+// Handles animation of the clusters and spider legs
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-in;
 }
-.leaflet-marker-icon.prunecluster-anim,
-.leaflet-marker-shadow.prunecluster-anim,
-.leaflet-markercluster-icon.prunecluster-anim {
-	transition: all 0.3s linear;
-}
-
-.leaflet-zoom-anim .leaflet-zoom-animated.leaflet-marker-icon,
-.leaflet-zoom-anim .leaflet-zoom-animated.leaflet-marker-shadow,
-.leaflet-zoom-anim .leaflet-zoom-animated.leaflet-markercluster-icon {
-    transition: transform 0.25s cubic-bezier(0,0,0.25,1);
-}
-.prunecluster div {
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	margin-left: 5px;
-	margin-top: 5px;
-	border-radius: 50%;
-}
-.prunecluster div span {
-	line-height: 30px;
-}
-
-.prunecluster-small {
-	background-color: #b5e28c;
-	background-color: rgba(181, 226, 140, 0.6);
-}
-
-.prunecluster-small div {
-	width: 28px;
-	height: 28px;
-	background-color: #6ecc39;
-	background-color: rgba(110, 204, 57, 0.6);
-}
-
-.prunecluster-small div span {
-	line-height: 28px;
-}
-
-.prunecluster-medium {
-	background-color: #f1d357;
-	background-color: rgba(241, 211, 87, 0.6);
-}
-
-.prunecluster-medium div {
-	background-color: #f0c20c;
-	background-color: rgba(240, 194, 12, 0.6);
-}
-
-.prunecluster-large {
-	background-color: #fd9c73;
-	background-color: rgba(253, 156, 115, 0.6);
-}
-
-.prunecluster-large div {
-	width: 34px;
-	height: 34px;
-	background-color: #f18017;
-	background-color: rgba(241, 128, 23, 0.6);
-}
-
-.prunecluster-large div span {
-	line-height: 34px;
+.leaflet-cluster-spider-leg {
+  /* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+  transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
 }
 
 

@@ -10,7 +10,7 @@
   <link rel="import" href="../px-map.html" />
   <link rel="import" href="../px-map-tile-layer.html" />
   <link rel="import" href="../px-map-control-zoom.html" />
-  <link rel="import" href="../../px-map-marker-group.html" />
+  <link rel="import" href="../px-map-marker-group.html" />
 
   <!-- Importing for the demo only... -->
   <link rel="import" href="../iron-ajax/iron-ajax.html" />
@@ -34,7 +34,7 @@
       <iron-ajax url="marker-clusters-geojson-transit.json" last-response="{{geoJSON}}" auto></iron-ajax>
 
       <px-map fit-to-markers flex-to-size on-px-map-moved="mapMove">
-        <px-map-tile-layer url="http://api.tiles.mapbox.com/v3/aj.map-b0cn5uze/{z}/{x}/{y}.png"></px-map-tile-layer>
+        <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
         <px-map-control-zoom position="bottomright"></px-map-control-zoom>
 
         <!-- Data-bind the output of the iron-ajax call `geoJSON` to the marker group's `data` attribute -->

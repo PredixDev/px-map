@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Map Demo -- Simple Map</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../polymer/polymer-mini.html" />
+
+  <!-- Importing px-map subcomponents... -->
+  <link rel="import" href="../px-map.html" />
+  <link rel="import" href="../px-map-tile-layer.html" />
+  <link rel="import" href="../px-map-marker-static.html" />
+
+</head>
+
+<style is="custom-style">
+  .wrap {
+    display: flex;
+    height: 100vh;
+  }
+</style>
+<body>
+  <section class="wrap">
+    <px-map zoom="10" flex-to-size>
+     <px-map-tile-layer url="http://api.tiles.mapbox.com/v3/aj.map-b0cn5uze/{z}/{x}/{y}.png"></px-map-tile-layer> 
+      <!--<px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>-->
+    </px-map>
+  </section>
+</body>
+</html>

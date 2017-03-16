@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Map Demo -- Map With Layer Group</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../polymer/polymer-mini.html" />
+
+  <!-- Importing px-map subcomponents... -->
+  <link rel="import" href="../px-map.html" />
+  <link rel="import" href="../px-map-tile-layer.html" />
+  <link rel="import" href="../px-map-control-zoom.html" />
+  <link rel="import" href="../px-map-layer-group.html" />
+  <link rel="import" href="../px-map-marker-static.html" />
+  <link rel="import" href="../px-map-popup-info.html" />
+</head>
+
+<style is="custom-style">
+  body {
+    margin: 0;
+  }
+  .wrap {
+    display: flex;
+    height: 100vh;
+  }
+</style>
+<body>
+  <section class="wrap">
+    <px-map zoom="12" fit-to-markers flex-to-size>
+      <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+      <px-map-layer-group name="Oakland Downtown BART">
+
+        <px-map-marker-static lat="37.8079" lng="-122.2687" type="info" show-badge>
+          <px-map-popup-info title="BART: 19th Street/Oakland"></px-map-popup-info>
+        </px-map-marker-static>
+
+        <px-map-marker-static lat="37.8033" lng="-122.2719" type="info" show-badge>
+          <px-map-popup-info title="BART: Oakland City Center/12th Street"></px-map-popup-info>
+        </px-map-marker-static>
+
+        <px-map-marker-static lat="37.7970" lng="-122.2652" type="info" show-badge>
+          <px-map-popup-info title="BART: Lake Merritt"></px-map-popup-info>
+        </px-map-marker-static>
+
+      </px-map-layer-group>
+    </px-map>
+  </section>
+</body>
+</html>

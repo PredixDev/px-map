@@ -1,0 +1,2532 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24042573",
+          "32.67445793"
+        ]
+      },
+      "properties": {
+        "title": "Cabrillo National Monument",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10001"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.27618677",
+          "32.83957829"
+        ]
+      },
+      "properties": {
+        "title": "Pearl St & Draper Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10003"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.2738099",
+          "32.84012848"
+        ]
+      },
+      "properties": {
+        "title": "Pearl St & Fay Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10004"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.26867322",
+          "32.8458467"
+        ]
+      },
+      "properties": {
+        "title": "Torrey Pines Rd & Exchange Pl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10006"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.26175158",
+          "32.84931178"
+        ]
+      },
+      "properties": {
+        "title": "Torrey Pines Rd & Hillside Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10007"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24825013",
+          "32.79810093"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Everts St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10011"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24583394",
+          "32.79652904"
+        ]
+      },
+      "properties": {
+        "title": "Grand Av & Fanuel St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10012"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24277358",
+          "32.79929398"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Haines St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10013"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24120249",
+          "32.79965017"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Ingraham St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10015"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23906319",
+          "32.80012359"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Jewell St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10016"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23574899",
+          "32.74506671"
+        ]
+      },
+      "properties": {
+        "title": "Voltaire St & Mendocino St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10020"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23556667",
+          "32.80087716"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Lamont St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10023"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23353563",
+          "32.74286905"
+        ]
+      },
+      "properties": {
+        "title": "Voltaire St & San Clemente St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10024"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23174882",
+          "32.8017129"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Noyes St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10025"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22970402",
+          "32.73814733"
+        ]
+      },
+      "properties": {
+        "title": "Chatsworth Bl & Tennyson St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10026"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22929493",
+          "32.74025595"
+        ]
+      },
+      "properties": {
+        "title": "Voltaire St & Poinsettia Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10027"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22673314",
+          "32.75266115"
+        ]
+      },
+      "properties": {
+        "title": "West Point Loma Bl & Adrian St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10029"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.2265353",
+          "32.72894288"
+        ]
+      },
+      "properties": {
+        "title": "Nimitz Bl & Rosecrans St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10031"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22584945",
+          "32.80091313"
+        ]
+      },
+      "properties": {
+        "title": "Grand Av & Culver St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10032"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22407745",
+          "32.75340225"
+        ]
+      },
+      "properties": {
+        "title": "West Point Loma Bl & Loma Riviera Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10033"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22518324",
+          "32.86829317"
+        ]
+      },
+      "properties": {
+        "title": "Nobel Dr & Lebon Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10034"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22121375",
+          "32.805504"
+        ]
+      },
+      "properties": {
+        "title": "Garnet Av & Bond St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10036"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.2210938",
+          "32.75567407"
+        ]
+      },
+      "properties": {
+        "title": "Sports Arena Bl & Midway Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10038"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21814068",
+          "32.75392997"
+        ]
+      },
+      "properties": {
+        "title": "Midway Dr & Duke St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10040"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21584744",
+          "32.75243625"
+        ]
+      },
+      "properties": {
+        "title": "Midway Dr & Kemper St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10043"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21783906",
+          "32.8022735"
+        ]
+      },
+      "properties": {
+        "title": "Grand Av & Mission Bay Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10044"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21069667",
+          "32.80774389"
+        ]
+      },
+      "properties": {
+        "title": "Balboa Av & Moraga Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10045"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20621403",
+          "32.77468641"
+        ]
+      },
+      "properties": {
+        "title": "Morena Bl & Frankfort St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10048"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20610593",
+          "32.85434508"
+        ]
+      },
+      "properties": {
+        "title": "Governor Dr & Radcliffe Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10049"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20398373",
+          "32.77332666"
+        ]
+      },
+      "properties": {
+        "title": "Morena Bl & Knoxville St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10050"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20286671",
+          "32.83307178"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Dr & Merrimac Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10051"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20242589",
+          "32.82813607"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Mesa Bl & Rolfe Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10052"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20082157",
+          "32.83271099"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Mesa Bl & Kleefeld Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10053"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19694673",
+          "32.78331677"
+        ]
+      },
+      "properties": {
+        "title": "Milton St & Garfield Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10057"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19588532",
+          "32.78264602"
+        ]
+      },
+      "properties": {
+        "title": "Milton St & Dunhaven St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10058"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19479416",
+          "32.78223386"
+        ]
+      },
+      "properties": {
+        "title": "Milton St & Penrose St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10060"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19113779",
+          "32.76890946"
+        ]
+      },
+      "properties": {
+        "title": "Linda Vista Rd & Colusa St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10062"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19112429",
+          "32.78226189"
+        ]
+      },
+      "properties": {
+        "title": "Milton St & August St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10063"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.19050441",
+          "32.75925323"
+        ]
+      },
+      "properties": {
+        "title": "Taylor St & I-8 East (Ramp)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10064"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18515409",
+          "32.75440702"
+        ]
+      },
+      "properties": {
+        "title": "Fort Stockton Dr & Witherby St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10069"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18288709",
+          "32.75257443"
+        ]
+      },
+      "properties": {
+        "title": "Fort Stockton Dr & St James Pl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10072"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18285491",
+          "32.83432122"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Mesa Bl & Longford St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10073"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18299026",
+          "32.8768838"
+        ]
+      },
+      "properties": {
+        "title": "Miramar Rd & Miramar Mall",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10074"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18228648",
+          "32.72778181"
+        ]
+      },
+      "properties": {
+        "title": "N Harbor Dr & Laurel St (Coast Guard)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10075"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17861058",
+          "32.75171067"
+        ]
+      },
+      "properties": {
+        "title": "Lewis St & Stephens St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10076"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17919188",
+          "32.83427737"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Mesa Bl & Limerick Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10077"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1751663",
+          "32.7517283"
+        ]
+      },
+      "properties": {
+        "title": "Lewis St & Ingalls St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10080"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17303442",
+          "32.79257078"
+        ]
+      },
+      "properties": {
+        "title": "Osler St & Ulric St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10082"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17143679",
+          "32.7928933"
+        ]
+      },
+      "properties": {
+        "title": "Osler St & Genesee Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10084"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16865659",
+          "32.87793669"
+        ]
+      },
+      "properties": {
+        "title": "Miramar Rd & Milch Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10085"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1666847",
+          "32.7155689"
+        ]
+      },
+      "properties": {
+        "title": "Broadway & State St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10086"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.06252065",
+          "33.14531258"
+        ]
+      },
+      "properties": {
+        "title": "Lincoln Av & Daisy St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22466"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.05996037",
+          "33.14685198"
+        ]
+      },
+      "properties": {
+        "title": "Lincoln Av & Goldenrod St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22465"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24551278",
+          "33.06720672"
+        ]
+      },
+      "properties": {
+        "title": "Rancho Santa Fe Rd & Olivenhain Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22461"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.06569595",
+          "33.14949135"
+        ]
+      },
+      "properties": {
+        "title": "El Norte Pkwy & Donald",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24028"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.24281533",
+          "32.90142374"
+        ]
+      },
+      "properties": {
+        "title": "N Torrey Pines Rd & Science Park Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "11541"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1519064",
+          "33.13991752"
+        ]
+      },
+      "properties": {
+        "title": "Rancheros Dr & 500 (Twin Oaks Valley Mhp)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22669"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.31927819",
+          "33.23034775"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Peyri Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22668"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.29642428",
+          "33.2374193"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Frazee Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22665"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30025022",
+          "33.23381396"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Avenida Calafia",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22664"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23921017",
+          "32.87578135"
+        ]
+      },
+      "properties": {
+        "title": "Gilman Dr & Eucalyptus Grove Ln",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "11548"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.29663237",
+          "33.23731585"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Frazee Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22666"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.3252447",
+          "33.22805891"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Douglas Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22663"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23263295",
+          "33.05242094"
+        ]
+      },
+      "properties": {
+        "title": "Rancho Santa Fe Rd & 11th St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "93254"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.20551612",
+          "33.13562118"
+        ]
+      },
+      "properties": {
+        "title": "Rancho Santa Fe Rd & Grandon Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "93255"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.06718713",
+          "33.1334993"
+        ]
+      },
+      "properties": {
+        "title": "Washington Av & Ash St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "92090"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.08488941",
+          "33.13041846"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Broadway",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "92092"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09720008",
+          "33.12049817"
+        ]
+      },
+      "properties": {
+        "title": "Escondido Maintenance Facility",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22267"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.23168788",
+          "32.86776616"
+        ]
+      },
+      "properties": {
+        "title": "Nobel Dr & La Jolla Village Square Drwy",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "13024"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.25978279",
+          "32.99415095"
+        ]
+      },
+      "properties": {
+        "title": "San Rodolfo Dr & Plaza West",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22009"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.26675394",
+          "33.08218943"
+        ]
+      },
+      "properties": {
+        "title": "El Camino Real & la Costa Town Ctr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22008"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.31468846",
+          "33.18070829"
+        ]
+      },
+      "properties": {
+        "title": "Vista Way & 3330 (Auto Club)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22000"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.3032588",
+          "33.1516251"
+        ]
+      },
+      "properties": {
+        "title": "El Camino Real & Lisa St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22002"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.28406835",
+          "33.03626946"
+        ]
+      },
+      "properties": {
+        "title": "Santa Fe Dr & Scripps Hospital",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22005"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.29091121",
+          "33.18383732"
+        ]
+      },
+      "properties": {
+        "title": "W Vista Way & Tri-city Medical Center",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22004"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.2698285",
+          "32.98348122"
+        ]
+      },
+      "properties": {
+        "title": "Highway 101 & Solana Beach City Hall (635)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22007"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.27866736",
+          "33.2432104"
+        ]
+      },
+      "properties": {
+        "title": "N Santa Fe Av & Alamosa Park Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22006"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.03671289",
+          "33.10297708"
+        ]
+      },
+      "properties": {
+        "title": "Hwy 78 & Highgrove Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20783"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30221038",
+          "33.06396466"
+        ]
+      },
+      "properties": {
+        "title": "Highway 101 & Leucadia Bl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21102"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30131515",
+          "33.06144087"
+        ]
+      },
+      "properties": {
+        "title": "Highway 101 & Daphne St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21104"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30008581",
+          "33.05935968"
+        ]
+      },
+      "properties": {
+        "title": "Highway 101 & Basil St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21106"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30135932",
+          "33.24911081"
+        ]
+      },
+      "properties": {
+        "title": "N River Rd & Redondo Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21109"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30210465",
+          "33.28475206"
+        ]
+      },
+      "properties": {
+        "title": "Vandegrift Bl & Barnett Cir",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21108"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09251275",
+          "33.13611114"
+        ]
+      },
+      "properties": {
+        "title": "Escondido Bl & Decatur Way",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22715"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09252993",
+          "33.13891995"
+        ]
+      },
+      "properties": {
+        "title": "Escondido Bl & El Norte Pkwy",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22714"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.07221518",
+          "33.12798837"
+        ]
+      },
+      "properties": {
+        "title": "Valley Pkwy & Elm St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22717"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09056507",
+          "33.13160865"
+        ]
+      },
+      "properties": {
+        "title": "N Escondido Bl & Lincoln Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22716"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.04742402",
+          "33.13066247"
+        ]
+      },
+      "properties": {
+        "title": "Midway Dr & Oak Hill Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22711"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.07146934",
+          "33.13764039"
+        ]
+      },
+      "properties": {
+        "title": "Ash St & Montros Pl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22710"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.07812642",
+          "33.13479266"
+        ]
+      },
+      "properties": {
+        "title": "Fig St & Lincoln Av (Kenwood Townhomes)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22713"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.07130594",
+          "33.1400766"
+        ]
+      },
+      "properties": {
+        "title": "Lincoln Av & Awana Glen",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22712"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.05906502",
+          "33.13408579"
+        ]
+      },
+      "properties": {
+        "title": "Valley Pkwy & Rose St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22719"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30046836",
+          "33.23373241"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Avenida Calafia",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22667"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.32278542",
+          "33.24996085"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Point Degada",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22485"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.31808605",
+          "33.25301096"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Festival Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22484"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.26263251",
+          "33.07274633"
+        ]
+      },
+      "properties": {
+        "title": "El Camino Real & Calle Barcelona",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22487"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.32275096",
+          "33.2471467"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Westport Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22486"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30689311",
+          "33.26557934"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Via Cibola",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22481"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.30195917",
+          "33.27155244"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Pilgrim Way",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22480"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.31665401",
+          "33.25414741"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Keyport St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22483"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.3130246",
+          "33.25698199"
+        ]
+      },
+      "properties": {
+        "title": "Douglas Dr & Catalina Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22482"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.41115787",
+          "33.25686115"
+        ]
+      },
+      "properties": {
+        "title": "Stuart Mesa & Ortiz",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22489"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.2624953",
+          "33.06707727"
+        ]
+      },
+      "properties": {
+        "title": "El Camino Real & Leucadia Bl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22488"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09639874",
+          "33.1596554"
+        ]
+      },
+      "properties": {
+        "title": "Country Club Ln & Ranchwood Glen",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20744"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.10213479",
+          "33.14600026"
+        ]
+      },
+      "properties": {
+        "title": "El Norte Pkwy & Seven Oaks Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20747"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.10234356",
+          "33.11268199"
+        ]
+      },
+      "properties": {
+        "title": "Valley Pkwy & Auto Park Wy",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20740"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.10186559",
+          "33.12534745"
+        ]
+      },
+      "properties": {
+        "title": "Mission Av & Metcalf St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20741"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1000773",
+          "33.1592317"
+        ]
+      },
+      "properties": {
+        "title": "Country Club Ln & Village Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20742"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09884735",
+          "33.14457988"
+        ]
+      },
+      "properties": {
+        "title": "El Norte Pkwy & Iris Ln",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20743"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09406865",
+          "33.16064974"
+        ]
+      },
+      "properties": {
+        "title": "Country Club Ln & N Iris Ln",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20748"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.09174988",
+          "33.13933751"
+        ]
+      },
+      "properties": {
+        "title": "El Norte Pkwy & Escondido Bl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "20749"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22177266",
+          "33.16843532"
+        ]
+      },
+      "properties": {
+        "title": "Watson Way & Thibodo Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24883"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.22162625",
+          "33.16849418"
+        ]
+      },
+      "properties": {
+        "title": "Watson Way & Thibodo Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24882"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.27961553",
+          "33.2039351"
+        ]
+      },
+      "properties": {
+        "title": "Emerald Dr & Silverfox Ln",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24881"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.29566237",
+          "33.20838256"
+        ]
+      },
+      "properties": {
+        "title": "Avenida de la Plata & 4039",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24880"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16305303",
+          "33.03789463"
+        ]
+      },
+      "properties": {
+        "title": "del Dios Hwy & Bing Crosby Bl",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24887"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21593248",
+          "33.16604306"
+        ]
+      },
+      "properties": {
+        "title": "Thibodo Rd & Sycamore Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24886"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21600028",
+          "33.16596833"
+        ]
+      },
+      "properties": {
+        "title": "Thibodo Rd & Sycamore Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24885"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.21729448",
+          "33.16686523"
+        ]
+      },
+      "properties": {
+        "title": "Thibodo Rd & Thibodo Ct",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "24884"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.27944835",
+          "33.2011138"
+        ]
+      },
+      "properties": {
+        "title": "Emerald Dr & Borra Ct",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21615"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.18122199",
+          "33.13449234"
+        ]
+      },
+      "properties": {
+        "title": "Bent Av & 245",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22901"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17695219",
+          "33.12798573"
+        ]
+      },
+      "properties": {
+        "title": "Craven Rd & Foxhall Ct",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22902"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.17154987",
+          "33.12741037"
+        ]
+      },
+      "properties": {
+        "title": "Craven Rd & Echo Lane",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22903"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16831947",
+          "33.1274261"
+        ]
+      },
+      "properties": {
+        "title": "Craven Rd & Rush Dr",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22904"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.28608108",
+          "33.14491513"
+        ]
+      },
+      "properties": {
+        "title": "El Camino Real & Sunny Creek Rd",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "21610"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.27958577",
+          "33.19583557"
+        ]
+      },
+      "properties": {
+        "title": "Emerald Dr & Lewis St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "22906"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16631202",
+          "32.74977421"
+        ]
+      },
+      "properties": {
+        "title": "Washington St & Albatross St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10088"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1649521",
+          "32.71559826"
+        ]
+      },
+      "properties": {
+        "title": "Broadway & Front St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10090"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16295728",
+          "32.83281806"
+        ]
+      },
+      "properties": {
+        "title": "Clairemont Mesa Bl & Shawline St (Kaiser)",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10091"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1629261",
+          "32.74819693"
+        ]
+      },
+      "properties": {
+        "title": "University Av & 3rd Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "unknown",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10092"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.1632153",
+          "32.79116236"
+        ]
+      },
+      "properties": {
+        "title": "Genesee Av & Richland St",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "info",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10093"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16210744",
+          "32.71561383"
+        ]
+      },
+      "properties": {
+        "title": "Broadway & 3rd Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "warning",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10094"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          "-117.16260879",
+          "32.87896273"
+        ]
+      },
+      "properties": {
+        "title": "Miramar Rd & Distribution Av",
+        "marker-icon": {
+          "icon-base": "map-static-icon",
+          "icon-type": "important",
+          "icon-with-badge": true
+        }
+      },
+      "id": "10095"
+    }
+  ]
+}

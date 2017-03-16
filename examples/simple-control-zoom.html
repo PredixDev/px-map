@@ -10,10 +10,9 @@
   <link rel="import" href="../px-map.html" />
   <link rel="import" href="../px-map-tile-layer.html" />
   <link rel="import" href="../px-map-control-zoom.html" />
-
 </head>
 
-<style is="custom-style">
+<style>
   .wrap {
     display: flex;
     height: 100vh;
@@ -24,9 +23,7 @@
     <px-map zoom="10" lat="37.7749" lng="-122.4312" flex-to-size>
       <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
       <!-- Positions a zoom control in the bottomright -->
-      <px-map-control-zoom
-        position="bottomleft">
-      </px-map-control-zoom>
+      <px-map-control-zoom position="bottomleft"></px-map-control-zoom>
     </px-map>
   </section>
 </body>

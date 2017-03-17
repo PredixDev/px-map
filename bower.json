@@ -30,7 +30,8 @@
     "leaflet": "^1.0.3",
     "es6-promise": "^3.3.1",
     "PruneCluster": "^1.1.0",
-    "leaflet.markercluster": "^1.0.3"
+    "leaflet.markercluster": "^1.0.3",
+    "app-localize-behavior": "^0.10.1"
   },
   "devDependencies": {
     "px-meta-buttons-design": "^0.6.2",

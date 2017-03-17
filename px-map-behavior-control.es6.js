@@ -55,7 +55,7 @@
        */
       zoomInText: {
         type: String,
-        value: '<i class="fa fa-plus"></i>',
+        value: '<i class="fa fa-plus"></i>'
       },
 
       /**
@@ -66,7 +66,61 @@
        */
       zoomOutText: {
         type: String,
-        value: '<i class="fa fa-minus"></i>',
+        value: '<i class="fa fa-minus"></i>'
+      },
+
+      /**
+       * Sets the hover text for zoom in button
+       * This is not dynamic and can only be set at run time
+       *
+       * @type {String}
+       */
+      zoomInTitle: {
+        type: String,
+        value: 'Zoom in'
+      },
+
+      /**
+       * Sets the hover text for zoom out button
+       * This is not dynamic and can only be set at run time
+       *
+       * @type {String}
+       */
+      zoomOutTitle: {
+        type: String,
+        value: 'Zoom out'
+      },
+
+      /**
+       * Current language for app-localize-behavior.
+       * Should be a valid IETF language tag (https://en.wikipedia.org/wiki/IETF_language_tag),
+       * such as 'en' (English), 'es' (Spanish), or 'zh-cn' (Simplified Chinese).
+       * See https://github.com/PolymerElements/app-localize-behavior for API and more information.
+       *
+       * @type {String}
+       */
+      language: {
+        type: String,
+        value: 'en'
+      },
+
+      /**
+       * Object providing localized strings for app-localize-behavior.
+       * The first key should be a valid IETF language tag,
+       * followed by key/value pairs for each string you need to localize.
+       * Can also be loaded in a locales.json file.
+       * See https://github.com/PolymerElements/app-localize-behavior for API and more information.
+       *
+       * @type {Object}
+       */
+      resources: {
+        type: Object,
+        value: function() {
+          return {
+            'en': { 'Zoom in': 'Zoom in', 'Zoom out': 'Zoom out' },
+            'de': { 'Zoom in': 'Zoomen', 'Zoom out': 'Rauszoomen' }
+          };
+        }
       }
     },
 
@@ -85,12 +139,15 @@
       return {
         position: this.position,
         zoomInText: this.zoomInText,
-        zoomOutText: this.zoomOutText
+        zoomOutText: this.zoomOutText,
+        zoomInTitle: this.localize(this.zoomInTitle),
+        zoomOutTitle: this.localize(this.zoomOutTitle)
       };
     }
   };
   /* Bind ZoomControl behavior */
   namespace.ZoomControl = [
+    Polymer.AppLocalizeBehavior,
     namespace.Control,
     ZoomControlImpl
   ];

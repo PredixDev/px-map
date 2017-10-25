@@ -15,6 +15,7 @@
 <link rel="import" href="../px-map.html" />
 <link rel="import" href="../px-map-tile-layer.html" />
 <link rel="import" href="../px-map-control-locate.html" />
+<link rel="import" href="../px-map-marker-locate.html" />
 
 <!-- Demo DOM module -->
 <dom-module id="px-map-control-locate-demo">
@@ -39,23 +40,53 @@
     <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
 
     <!-- Component ---------------------------------------------------------->
-    <px-demo-component>
-      <div style="height:400px;width:600px;display:flex">
-        <px-map
-          flex-to-size
-          disable-scroll-zoom
-          disable-touch-zoom
-          attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
-          <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
-          <px-map-control-locate
-            position="{{props.position.value}}"
-            locate-title="{{props.locateTitle.value}}"
-            move-max-zoom="{{props.moveMaxZoom.value}}"
-            move-to-location="{{props.moveToLocation.value}}">
-          </px-map-control-locate>
-        </px-map>
-      </div>
-    </px-demo-component>
+    <template is="dom-if" if="{{_selectedConfigIs(chosenConfig.configName, 'Basic')}}" restamp>
+      <px-demo-component>
+        <div style="height:400px;width:600px;display:flex">
+          <px-map
+            flex-to-size
+            disable-scroll-zoom
+            disable-touch-zoom
+            attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+            <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+            <px-map-control-locate
+              position="{{props.position.value}}"
+              locate-text="{{props.locateText.value}}"
+              locate-title="{{props.locateTitle.value}}"
+              move-max-zoom="{{props.moveMaxZoom.value}}"
+              move-to-location="{{props.moveToLocation.value}}">
+            </px-map-control-locate>
+          </px-map>
+        </div>
+      </px-demo-component>
+    </template>
+
+    <template is="dom-if" if="{{_selectedConfigIs(chosenConfig.configName, 'Marker locate')}}" restamp>
+      <px-demo-component>
+        <div style="height:400px;width:600px;display:flex">
+          <px-map
+            flex-to-size
+            disable-scroll-zoom
+            disable-touch-zoom
+            attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+            <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+            <px-map-control-locate
+              position="{{props.position.value}}"
+              locate-text="{{props.locateText.value}}"
+              locate-title="{{props.locateTitle.value}}"
+              move-max-zoom="{{props.moveMaxZoom.value}}"
+              move-to-location="{{props.moveToLocation.value}}"
+              last-found-location="{{location}}">
+            </px-map-control-locate>
+            <px-map-marker-locate
+              lat="[[location.lat]]"
+              lng="[[location.lng]]"
+              accuracy="[[location.accuracy]]">
+            </px-map-marker-locate>
+          </px-map>
+        </div>
+      </px-demo-component>
+    </template>
     <!-- END Component ------------------------------------------------------>
 
     <px-demo-component-snippet
@@ -110,6 +141,11 @@
             return [
               { configName: "Basic",
                 configReset: true },
+
+              { configName: "Marker locate",
+                configReset: true,
+                lastFoundLocation: "{{location}}",
+                siblingElement: '<px-map-marker-locate lat=\'[[location.lat]]\' lng=\'[[location.lng]]\' accuracy=\'[[location.accuracy]]\'></px-map-marker-locate><px-map-tile-layer url=\'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\'></px-map-tile-layer>' }
               ]
           }
         },
@@ -178,8 +214,17 @@
         },
 
         siblingElement: {
-          value: '<px-map-tile-layer url=\'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\'></px-map-tile-layer>'
+          defaultValue: '<px-map-tile-layer url=\'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\'></px-map-tile-layer>'
+        },
+
+        lastFoundLocation: {
+          defaultValue: ''
         }
+      },
+
+      _selectedConfigIs(configName, name) {
+        return configName === name;
       }
+
     });
   </script>

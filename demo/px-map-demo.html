@@ -14,6 +14,15 @@
 <!-- Imports for this component -->
 <link rel="import" href="../px-map.html" />
 <link rel="import" href="../px-map-tile-layer.html" />
+<link rel="import" href="../px-map-control-zoom.html" />
+<link rel="import" href="../px-map-control-scale.html" />
+<link rel="import" href="../px-map-control-locate.html" />
+<link rel="import" href="../px-map-marker-static.html" />
+<link rel="import" href="../px-map-marker-symbol.html" />
+<link rel="import" href="../px-map-marker-locate.html" />
+<link rel="import" href="../px-map-layer-group.html" />
+<link rel="import" href="../px-map-popup-info.html" />
+<link rel="import" href="../px-map-popup-data.html" />
 
 <!-- Demo DOM module -->
 <dom-module id="px-map-demo">
@@ -35,21 +44,80 @@
     <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
 
     <!-- Component ---------------------------------------------------------->
-    <px-demo-component>
-      <div style="height:400px;width:600px;display:flex">
-        <px-map
-          zoom="{{props.zoom.value}}"
-          lat="{{props.lat.value}}"
-          lng="{{props.lng.value}}"
-          flex-to-size="{{props.flexToSize.value}}"
-          disable-scroll-zoom="{{props.disableScrollZoom.value}}"
-          disable-touch-zoom="{{props.disableScrollZoom.value}}"
-          disable-dragging="{{props.disableDragging.value}}"
-          attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
-          <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
-        </px-map>
-      </div>
-    </px-demo-component>
+    <template is="dom-if" if="{{_selectedConfigIs(chosenConfig.configName, 'Basic')}}" restamp>
+      <px-demo-component>
+        <div style="height:400px;width:600px;display:flex">
+          <px-map
+            zoom="{{props.zoom.value}}"
+            lat="{{props.lat.value}}"
+            lng="{{props.lng.value}}"
+            flex-to-size="{{props.flexToSize.value}}"
+            disable-scroll-zoom="{{props.disableScrollZoom.value}}"
+            disable-touch-zoom="{{props.disableScrollZoom.value}}"
+            disable-dragging="{{props.disableDragging.value}}"
+            attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+            <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+          </px-map>
+        </div>
+      </px-demo-component>
+    </template>
+
+    <template is="dom-if" if="{{_selectedConfigIs(chosenConfig.configName, 'Advanced')}}" restamp>
+      <px-demo-component>
+        <div style="height:400px;width:600px;display:flex">
+          <px-map
+            zoom="{{props.zoom.value}}"
+            lat="{{props.lat.value}}"
+            lng="{{props.lng.value}}"
+            flex-to-size="{{props.flexToSize.value}}"
+            fit-to-markers="{{props.fitToMarkers.value}}"
+            disable-scroll-zoom="{{props.disableScrollZoom.value}}"
+            disable-touch-zoom="{{props.disableScrollZoom.value}}"
+            disable-dragging="{{props.disableDragging.value}}"
+            attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+            <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
+
+            <px-map-control-zoom position="topright"></px-map-control-zoom>
+            <px-map-control-scale position="bottomleft" imperial-units metric-units></px-map-control-scale>
+            <px-map-control-locate position="bottomright" move-to-location last-found-location="{{location}}"></px-map-control-locate>
+
+            <px-map-marker-locate lat="[[location.lat]]" lng="[[location.lng]]" accuracy="[[location.accuracy]]"></px-map-marker-locate>
+
+            <px-map-layer-group name="Ice Cream - SF Mission District">
+              <px-map-marker-static lat="37.7616534" lng="-122.4250745" type="info">
+                <px-map-popup-data
+                  title="Bi-Rite Creamery"
+                  data='{ "Address" : "3692 18th St, San Francisco, CA 94110", "Website" : "biritecreamery.com", "Phone" : "(415) 626-5600", "Avg. rating" : "4.6" }'>
+                </px-map-popup-data>
+              </px-map-marker-static>
+              <px-map-marker-static lat="37.7650501" lng="-122.4244098" type="info">
+                <px-map-popup-data
+                  title="CREAM"
+                  data='{ "Address" : "3106 16th St, San Francisco, CA 94103", "Website" : "creamnation.com", "Phone" : "(415) 400-4551", "Avg. rating" : "4.3" }'>
+                </px-map-popup-data>
+              </px-map-marker-static>
+              <px-map-marker-static lat="37.7583044" lng="-122.4237283" type="info">
+                <px-map-popup-data
+                  title="Smitten Ice Cream"
+                  data='{ "Address" : "904 Valencia St, San Francisco, CA 94110", "Website" : "smittenicecream.com", "Phone" : "(415) 590-3144", "Avg. rating" : "5.0" }'>
+                </px-map-popup-data>
+              </px-map-marker-static>
+              <px-map-marker-static lat="37.7666529" lng="-122.4177745" type="info">
+                <px-map-popup-data
+                  title="Humphry Slocombe"
+                  data='{ "Address" : "2790 Harrison St A, San Francisco, CA 94110", "Website" : "humphryslocombe.com", "Phone" : "(415) 550-6971", "Avg. rating" : "4.7" }'>
+                </px-map-popup-data>
+              </px-map-marker-static>
+            </px-map-layer-group>
+
+            <px-map-marker-symbol lat="37.7650579" lng="-122.4218937" type="info" icon="px-obj:train">
+              <px-map-popup-info title="BART: 16th St. Mission"></px-map-popup-info>
+            </px-map-marker-symbol>
+
+          </px-map>
+        </div>
+      </px-demo-component>
+    </template>
     <!-- END Component ------------------------------------------------------>
 
     <px-demo-component-snippet
@@ -101,8 +169,13 @@
           type: Array,
           value: function(){
             return [
-              { configName: "Default",
+              { configName: "Basic",
                 configReset: true },
+
+              { configName: "Advanced",
+                configReset: true,
+                fitToMarkers: true,
+                lightDomContent: '<px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer><px-map-control-zoom position="topright"></px-map-control-zoom><px-map-control-scale position="bottomleft" imperial-units metric-units></px-map-control-scale><px-map-control-locate position="bottomright" move-to-location last-found-location="{{location}}"></px-map-control-locate><px-map-marker-locate lat="[[location.lat]]" lng="[[location.lng]]" accuracy="[[location.accuracy]]"></px-map-marker-locate><px-map-layer-group name="Ice Cream - SF Mission District"><px-map-marker-static lat="37.7616534" lng="-122.4250745" type="info"><px-map-popup-data title="Bi-Rite Creamery" data=\'{ "Address" : "3692 18th St, San Francisco, CA 94110", "Website" : "biritecreamery.com", "Phone" : "(415) 626-5600", "Avg. rating" : "4.6" }\'></px-map-popup-data></px-map-marker-static><px-map-marker-static lat="37.7650501" lng="-122.4244098" type="info"><px-map-popup-data title="CREAM" data=\'{ "Address" : "3106 16th St, San Francisco, CA 94103", "Website" : "creamnation.com", "Phone" : "(415) 400-4551", "Avg. rating" : "4.3" }\'></px-map-popup-data></px-map-marker-static></px-map-marker-static><px-map-marker-static lat="37.7583044" lng="-122.4237283" type="info"><px-map-popup-data title="Smitten Ice Cream" data=\'{ "Address" : "904 Valencia St, San Francisco, CA 94110", "Website" : "smittenicecream.com", "Phone" : "(415) 590-3144", "Avg. rating" : "5.0" }\'></px-map-popup-data></px-map-marker-static><px-map-marker-static lat="37.7666529" lng="-122.4177745" type="info"><px-map-popup-data title="Humphry Slocombe" data=\'{ "Address" : "2790 Harrison St A, San Francisco, CA 94110", "Website" : "humphryslocombe.com", "Phone" : "(415) 550-6971", "Avg. rating" : "4.7" }\'></px-map-popup-data></px-map-marker-static></px-map-layer-group><px-map-marker-symbol lat="37.7650467" lng="-122.4218885" type="info" symbol-class="fa fa-subway"><px-map-popup-info title="BART: 16th St. Mission"></px-map-popup-info></px-map-marker-symbol>'}
               ]
           }
         },
@@ -167,6 +240,13 @@
           inputDisabled: true
         },
 
+        fitToMarkers: {
+          type: Boolean,
+          defaultValue: false,
+          inputType: 'toggle',
+          inputDisabled: false
+        },
+
         disableScrollZoom: {
           type: Boolean,
           defaultValue: true,
@@ -194,7 +274,11 @@
           type: String,
           defaultValue: '<px-map-tile-layer url=\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\"></px-map-tile-layer>'
         }
+      },
 
+      _selectedConfigIs(configName, name) {
+        return configName === name;
       }
+
     });
   </script>

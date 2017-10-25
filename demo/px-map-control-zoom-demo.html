@@ -39,10 +39,11 @@
     <!-- Component ---------------------------------------------------------->
     <px-demo-component>
       <div style="height:400px;width:600px;display:flex">
-        <px-map flex-to-size
-                disable-scroll-zoom
-                disable-touch-zoom
-                attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+        <px-map
+          flex-to-size
+          disable-scroll-zoom
+          disable-touch-zoom
+          attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
           <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
           <px-map-control-zoom position="{{props.position.value}}"></px-map-control-zoom>
         </px-map>

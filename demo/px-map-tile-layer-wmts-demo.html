@@ -1,0 +1,166 @@
+<!-- Common imports -->
+<link rel="import" href="../../polymer/polymer.html" />
+
+<!-- Common demo imports -->
+<link rel="import" href="../../px-demo/px-demo-header.html" />
+<link rel="import" href="../../px-demo/px-demo-api-viewer.html" />
+<link rel="import" href="../../px-demo/px-demo-footer.html" />
+<link rel="import" href="../../px-demo/px-demo-configs.html" />
+<link rel="import" href="../../px-demo/px-demo-props.html" />
+<link rel="import" href="../../px-demo/px-demo-interactive.html" />
+<link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
+<link rel="import" href="../../px-demo/css/px-demo-styles.html" />
+
+<!-- Imports for this component -->
+<link rel="import" href="../px-map.html" />
+<link rel="import" href="../px-map-tile-layer-wmts.html" />
+
+<!-- Demo DOM module -->
+<dom-module id="px-map-tile-layer-wmts-demo">
+  <template>
+  <style include="px-demo-styles" is="custom-style"></style>
+
+  <!-- Header -->
+  <px-demo-header
+      module-name="px-map-tile-layer-wmts"
+      parent-name="px-map"
+      description="Displays WMTS services as tile layers"
+      mobile tablet desktop>
+  </px-demo-header>
+
+  <!-- Interactive -->
+  <px-demo-interactive>
+    <!-- Configs -->
+    <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+
+    <!-- Props -->
+    <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+
+    <!-- Component ---------------------------------------------------------->
+    <px-demo-component>
+      <div style="height:400px;width:600px;display:flex">
+        <px-map
+          zoom="3"
+          lat="42.42"
+          lng="-92.28"
+          flex-to-size
+          disable-scroll-zoom
+          disable-touch-zoom
+          attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
+          <px-map-control-zoom position="bottomleft"></px-map-control-zoom>
+          <px-map-tile-layer-wmts
+              url="[[props.url.value]]"
+              layer="[[props.layers.value]]">
+          </px-map-tile-layer-wmts>
+        </px-map>
+      </div>
+    </px-demo-component>
+    <!-- END Component ------------------------------------------------------>
+
+    <px-demo-component-snippet
+        element-properties="{{props}}"
+        element-name="px-map-tile-layer-wmts"
+        links-includes='["px-map/px-map.html","px-map/px-map-tile-layer-wmts.html"]'>
+    </px-demo-component-snippet>
+  </px-demo-interactive>
+
+  <!-- API Viewer -->
+  <px-demo-api-viewer
+    source="px-map-tile-layer-wmts"
+    api-source-file-path="px-map/px-map-api.json"
+    mark-private="[[apiMarkPrivate]]">
+  </px-demo-api-viewer>
+
+  <!-- Footer -->
+  <px-demo-footer></px-demo-footer>
+</template>
+</dom-module>
+
+  <script>
+    Polymer({
+      is: 'px-map-tile-layer-wmts-demo',
+
+      properties: {
+
+        /**
+         * Note: The actual data/values for `props` are placed in `this.demoProps`
+         * to create a static reference that Polymer shouldn't overwrite.
+         *
+         * @property props
+         * @type {Object}
+         */
+        props: {
+          type: Object,
+          value: function(){ return this.demoProps; }
+        },
+
+        /**
+         * An array of pre-configured `props` that can be used to provide the user
+         * with a set of common examples. These configs will be made available
+         * as a set of tabs the user can click that will automatically change
+         * the `props` to specific values.
+         *
+         * @property configs
+         * @type {Array}
+         */
+        configs: {
+          type: Array,
+          value: function(){
+            return [
+              { configName: "Basic",
+                configReset: true }
+            ]
+          }
+        },
+
+        apiMarkPrivate: {
+          type: Array,
+          value: function() {
+            return [
+              "notifyInstReady",
+              "notifyInstReady",
+              "canAddInst",
+              "shouldAddInst",
+              "addInst",
+              "shouldRemoveInst",
+              "removeInst",
+              "shouldUpdateInst",
+              "updateInst",
+              "createInst",
+              "getInstOptions",
+              "bindEvents",
+              "unbindAllEvents",
+              "addProperties",
+              "extendObj",
+              "getShadyScope",
+              "isShadyScoped"
+            ]
+          }
+        }
+      },
+
+      /**
+       * A reference for `this.props`. Read the documentation there.
+       *
+       * @property demoProps
+       * @type {Object}
+       */
+      demoProps: {
+        url: {
+          type: String,
+          defaultValue: 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/WMTS?',
+          inputType: 'text'
+        },
+
+        layer: {
+          type: String,
+          defaultValue: 'WorldTimeZones',
+          inputType: 'text'
+        },
+
+        parentComponent: {
+          value: ['<div style="height:400px; width:600px; display:flex"><px-map flex-to-size disable-scroll-zoom disable-touch-zoom>', '</px-map></div>']
+        }
+      }
+    });
+  </script>

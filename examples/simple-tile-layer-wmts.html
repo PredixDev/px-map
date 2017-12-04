@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Map Demo -- Simple WMTS Tile Layer</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../polymer/polymer-mini.html" />
+
+  <!-- Importing px-map subcomponents... -->
+  <link rel="import" href="../px-map.html" />
+  <link rel="import" href="../px-map-tile-layer-wmts.html" />
+  <link rel="import" href="../px-map-control-zoom.html" />
+</head>
+
+<style>
+  .wrap {
+    display: flex;
+    height: 100vh;
+  }
+</style>
+<body>
+  <section class="wrap">
+    <px-map flex-to-size disable-scroll-zoom disable-touch-zoom zoom="4">
+      <!-- Simple WMTS example -->
+
+      <px-map-tile-layer-wmts 
+        url="http://sampleserver6.arcgisonline.com/arcgis/rest/services/WorldTimeZones/MapServer/WMTS?" 
+        layer="WorldTimeZones" 
+        format="image/png" 
+        attribution="Example data (c) 2017 Example Corp.">
+      </px-map-tile-layer-wmts>
+
+      <px-map-control-zoom position="bottomright"></px-map-control-zoom>
+    </px-map>
+  </section>
+</body>
+</html>

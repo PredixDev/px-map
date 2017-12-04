@@ -1,0 +1,185 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-map-behavior-tile-layer.html"/>
+
+<!--
+This subcomponent displays WMTS services as tile layers on the map. It is a simple
+wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also included a wmts plugin leaflet-tilelayer-wmts that supports Leaflet. Find the plugin and leaflet plugin details here. [on the github website](https://github.com/mylen/leaflet.TileLayer.WMTS).
+
+### Usage
+
+    <px-map>
+      <px-map-tile-layer-wmts 
+        url="http://example.com/cgi-bin/wmts/map.cgi" 
+        layer="WorldTimeZones" 
+        format="image/png" 
+        attribution="Example data (c) 2017 Example Corp."> 
+      </px-map-tile-layer-wmts>
+    </px-map>
+
+@element px-map-tile-layer-wmts
+@blurb Displays WMTS services as tile layers
+@homepage index.html
+@demo index.html
+-->
+
+<script src="leaflet-tilelayer-wmts.js"></script>
+
+<dom-module id="px-map-tile-layer-wmts">
+  <style>
+    :host { display: none }
+  </style>
+  <template></template>
+</dom-module>
+
+<script>
+  Polymer({
+    is: 'px-map-tile-layer-wmts',
+    behaviors: [PxMapBehavior.Layer],
+
+    properties: {
+      /**
+       * Base URL of the WMTS service.
+       */
+      url: {
+        type: String,
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * WMTS layers to show. Required to show the WMTS
+       * tile layers.
+       */
+      layer: {
+        type: String,
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * WMTS request to get the Tile.
+       */
+      request: {
+        type: String,
+        observer: 'shouldUpdateInst',
+        value: 'gettile'
+      },
+
+      /**
+       * Comma-separated list of WMTS styles.
+       */
+      style: {
+        type: String,
+        observer: 'shouldUpdateInst',
+        value: 'default'
+      },
+
+      /**
+       * WMTS image format to use (use 'image/png' for layers).
+       */
+      format: {
+        type: String,
+        value: 'image/jpeg',
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Version of the WMTS service to use.
+       */
+      version: {
+        type: String,
+        value: '1.0.0',
+        observer: 'shouldUpdateInst'
+      },
+
+      maxNativeZoom: {
+        type: Number,
+        observer: 'shouldUpdateInst',
+        value: 18
+      },
+
+      transparent: {
+        type: Boolean,
+        value: true,
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Tile matrix set to use for the WMTS requests, defaults to
+       * map 'PM'. Don't change this if you're not sure what it means.
+       */
+      tileMatrixSet: {
+        type: String,
+        value: 'default028mm',
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+      * The identifier of one of the TileMatrix defined in a particular TileMatrixSet
+      */
+      tileMatrix: {
+        type: Number,
+        observer: 'shouldUpdateInst',
+        value: 1
+      },
+
+      /**
+      * Row index of a tile matrix
+      */
+      TileRow: {
+        type: Number,
+        observer: 'shouldUpdateInst',
+        value: 0
+      },
+
+      /**
+      * Column index of a tile matrix
+      */
+      TileCol: {
+        type: Number,
+        observer: 'shouldUpdateInst',
+        value: 0
+      }
+    },
+
+    canAddInst: function() {
+      return (typeof this.url === 'string') && this.url.length > 0 && (typeof this.layer === 'string') && this.layer.length > 0;
+    },
+
+    createInst: function(options) {
+      return L.tileLayer.wmts(options.url, options.wmtsOptions);
+    },
+
+    updateInst: function(lastOptions, nextOptions) {
+      if (lastOptions.url !== nextOptions.url) {
+        this.elementInst.setUrl(nextOptions.url);
+      }
+      // wmtsOptionsHash ?? not sure if this is required
+      if (lastOptions.wmtsOptionsHash !== nextOptions.wmtsOptionsHash) {
+        this.elementInst.setParams(nextOptions.wmtsOptions);
+      }
+    },
+
+    getInstOptions: function() {
+      const wmtsOptions = {
+        layer: this.layer,
+        version: this.version,
+        request: this.request,
+        transparent: true
+      };
+      if (typeof this.style === 'string' && this.style.length > 0) {
+        wmtsOptions.style = this.style;
+      }
+      if (typeof this.format === 'string' && this.format.length > 0) {
+        wmtsOptions.format = this.format;
+      }
+      if (this.tileMatrixSet) {
+        wmtsOptions.tileMatrixSet = this.tileMatrixSet;
+      }
+
+      return {
+        url: this.url,
+        wmtsOptions: wmtsOptions,
+        wmtsOptionsHash: JSON.stringify(wmtsOptions)
+      };
+    }
+  });
+</script>

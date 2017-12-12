@@ -2,8 +2,9 @@
 <link rel="import" href="px-map-behavior-tile-layer.html"/>
 
 <!--
-This subcomponent displays WMTS services as tile layers on the map. It is a simple
-wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also included a wmts plugin leaflet-tilelayer-wmts that supports Leaflet. Find the plugin and leaflet plugin details here. [on the github website](https://github.com/mylen/leaflet.TileLayer.WMTS).
+This subcomponent displays WMTS services as tile layers on the map. It is based on
+the `leaflet.TileLayer.WMTS` [plugin](https://github.com/mylen/leaflet.TileLayer.WMTS)
+released by Alexandre Melard on Github under the [BSD license](https://github.com/mylen/leaflet.TileLayer.WMTS/blob/982070cf5521dad7d00cd790a5c02c01eed26f3d/LICENCE).
 
 ### Usage
 
@@ -11,7 +12,7 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
       <px-map-tile-layer-wmts 
         url="http://example.com/cgi-bin/wmts/map.cgi" 
         layer="WorldTimeZones" 
-        format="image/png" 
+        format="image/jpeg" 
         attribution="Example data (c) 2017 Example Corp."> 
       </px-map-tile-layer-wmts>
     </px-map>
@@ -46,21 +47,11 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
       },
 
       /**
-       * WMTS layers to show. Required to show the WMTS
-       * tile layers.
+       * WMTS layer to show the WMTS tiles.
        */
       layer: {
         type: String,
         observer: 'shouldUpdateInst'
-      },
-
-      /**
-       * WMTS request to get the Tile.
-       */
-      request: {
-        type: String,
-        observer: 'shouldUpdateInst',
-        value: 'gettile'
       },
 
       /**
@@ -90,53 +81,23 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
         observer: 'shouldUpdateInst'
       },
 
-      maxNativeZoom: {
-        type: Number,
-        observer: 'shouldUpdateInst',
-        value: 18
-      },
-
-      transparent: {
+      /**
+       * Transparent property of wmts layer.
+       */
+      disableTransparent: {
         type: Boolean,
-        value: true,
+        value: false,
         observer: 'shouldUpdateInst'
       },
 
       /**
        * Tile matrix set to use for the WMTS requests, defaults to
-       * map 'PM'. Don't change this if you're not sure what it means.
+       * map 'default'. Don't change this if you're not sure what it means.
        */
       tileMatrixSet: {
         type: String,
-        value: 'default028mm',
+        value: 'default',
         observer: 'shouldUpdateInst'
-      },
-
-      /**
-      * The identifier of one of the TileMatrix defined in a particular TileMatrixSet
-      */
-      tileMatrix: {
-        type: Number,
-        observer: 'shouldUpdateInst',
-        value: 1
-      },
-
-      /**
-      * Row index of a tile matrix
-      */
-      TileRow: {
-        type: Number,
-        observer: 'shouldUpdateInst',
-        value: 0
-      },
-
-      /**
-      * Column index of a tile matrix
-      */
-      TileCol: {
-        type: Number,
-        observer: 'shouldUpdateInst',
-        value: 0
       }
     },
 
@@ -149,10 +110,6 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
     },
 
     updateInst: function(lastOptions, nextOptions) {
-      if (lastOptions.url !== nextOptions.url) {
-        this.elementInst.setUrl(nextOptions.url);
-      }
-      // wmtsOptionsHash ?? not sure if this is required
       if (lastOptions.wmtsOptionsHash !== nextOptions.wmtsOptionsHash) {
         this.elementInst.setParams(nextOptions.wmtsOptions);
       }
@@ -161,9 +118,7 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
     getInstOptions: function() {
       const wmtsOptions = {
         layer: this.layer,
-        version: this.version,
-        request: this.request,
-        transparent: true
+        version: this.version
       };
       if (typeof this.style === 'string' && this.style.length > 0) {
         wmtsOptions.style = this.style;
@@ -174,6 +129,10 @@ wrapper around the Leaflet mapping library's L.tileLayer.wmts layer. It has also
       if (this.tileMatrixSet) {
         wmtsOptions.tileMatrixSet = this.tileMatrixSet;
       }
+
+      // assign the transparent property
+      this.disableTransparent = true;
+      wmtsOptions.transparent = this.disableTransparent;
 
       return {
         url: this.url,

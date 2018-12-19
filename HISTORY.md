@@ -1,10 +1,3 @@
-v3.5.0
-===================
-## New features:
-* Add `maxWidth` (Defaults to 400) and `minWidth` (Defaults to 300) property to
-  px-map-popup-info and px-map-popup-data. They are used to manually set max and
-  min width of the popup container.
-
 v3.4.0
 ===================
 ## New features:

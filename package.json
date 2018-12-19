@@ -31,6 +31,9 @@
     "stream-combiner2": "^1.1.1",
     "yargs": "^6.0.0"
   },
+  "resolutions": {
+    "natives": "1.1.6"
+  },
   "scripts": {
     "test": "./node_modules/.bin/wct",
     "build": "./scripts/build.sh"

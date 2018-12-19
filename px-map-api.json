@@ -23,13 +23,15 @@
             }
           },
           "metadata": {
-            "polymer": {}
+            "polymer": {
+              "attributeType": "Object"
+            }
           },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
           "name": "lat",
-          "type": "number",
+          "type": "Number",
           "description": "The latitude of the active map center. Can be used to set or update\nthe center of the map, or read from after the user moves the map to\nget updated coordinates.",
           "privacy": "public",
           "sourceRange": {
@@ -46,7 +48,8 @@
           "metadata": {
             "polymer": {
               "notify": true,
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Number"
             }
           },
           "defaultValue": "37.7672375",
@@ -54,7 +57,7 @@
         },
         {
           "name": "lng",
-          "type": "number",
+          "type": "Number",
           "description": "The longitude of the active map center. Can be used to set or update\nthe center of the map, or read from after the user moves the map to\nget updated coordinates.",
           "privacy": "public",
           "sourceRange": {
@@ -71,7 +74,8 @@
           "metadata": {
             "polymer": {
               "notify": true,
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Number"
             }
           },
           "defaultValue": "-121.9584131",
@@ -79,7 +83,7 @@
         },
         {
           "name": "zoom",
-          "type": "number",
+          "type": "Number",
           "description": "The zoom level of the active map. Can be used to set or update\nthe zoom level of the map, or read from after the user changes the\nmap zoom level to an updated value.",
           "privacy": "public",
           "sourceRange": {
@@ -96,7 +100,8 @@
           "metadata": {
             "polymer": {
               "notify": true,
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Number"
             }
           },
           "defaultValue": "10",
@@ -104,7 +109,7 @@
         },
         {
           "name": "maxZoom",
-          "type": "number",
+          "type": "Number",
           "description": "The maximum zoom level for the active map (the furthest the user can\nzoom in). Setting it at the map level will take precedence over the\nmax zoom of all other layers, including tile layers. If you need to\nset different zoom bounds based on the visible tile layer, set the\nmax zoom directly on your tile layer.",
           "privacy": "public",
           "sourceRange": {
@@ -120,14 +125,15 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Number"
             }
           },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
           "name": "minZoom",
-          "type": "number",
+          "type": "Number",
           "description": "The minimum zoom level for the active map (the furthest the user can\nzoom out). Setting it at the map level will take precedence over the\nmin zoom of all other layers, including tile layers. If you need to\nset different zoom bounds based on the visible tile layer, set the\nmin zoom directly on your tile layer.",
           "privacy": "public",
           "sourceRange": {
@@ -143,7 +149,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Number"
             }
           },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
@@ -166,14 +173,15 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Array"
             }
           },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
           "name": "disableDragging",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Set to disable dragging of the map with the mouse or by touch. Use to\nrestrict changing the map's visible area (e.g. for a static map) or\nto set up a map for being updated programmatically (e.g. through regular\nresponses from an API).",
           "privacy": "public",
           "sourceRange": {
@@ -189,7 +197,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Boolean"
             }
           },
           "defaultValue": "false",
@@ -197,7 +206,7 @@
         },
         {
           "name": "disableScrollZoom",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Set to disable zooming with the scroll wheel. Useful if you have a map\nthat takes up the full width of a page and want to allow the user to\nscroll/swipe past without getting stuck in a zoom-in-zoom-out loop.",
           "privacy": "public",
           "sourceRange": {
@@ -213,7 +222,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Boolean"
             }
           },
           "defaultValue": "false",
@@ -221,7 +231,7 @@
         },
         {
           "name": "disableTouchZoom",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Set to disable the two-finger zoom gesture on touch devices.",
           "privacy": "public",
           "sourceRange": {
@@ -237,7 +247,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Boolean"
             }
           },
           "defaultValue": "false",
@@ -245,7 +256,7 @@
         },
         {
           "name": "disableDoubleClickZoom",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Set to disable zooming on double-click.",
           "privacy": "public",
           "sourceRange": {
@@ -261,7 +272,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "Boolean"
             }
           },
           "defaultValue": "false",
@@ -269,7 +281,7 @@
         },
         {
           "name": "disableAttribution",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Set to disable the attribution control, which can be used to show the\nsource of tile layers or other data overlays.\n\nThis property is not dynamic and can only be set once when the map is\nfirst initialized.",
           "privacy": "public",
           "sourceRange": {
@@ -284,14 +296,16 @@
             }
           },
           "metadata": {
-            "polymer": {}
+            "polymer": {
+              "attributeType": "Boolean"
+            }
           },
           "defaultValue": "false",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
           "name": "attributionPrefix",
-          "type": "string",
+          "type": "String",
           "description": "Stringified HTML that will be used as the first item in your attribution\nlist. Pass an <a> tag with a link to more information about your\nattribution source. Example: '<a href=\"https://example.com\">Example</a>'\n\nDefaults to a link to the Leaflet.js library. If an empty string is\npassed (\"\") the prefix will be hidden.",
           "privacy": "public",
           "sourceRange": {
@@ -307,7 +321,8 @@
           },
           "metadata": {
             "polymer": {
-              "observer": "\"shouldUpdateInst\""
+              "observer": "\"shouldUpdateInst\"",
+              "attributeType": "String"
             }
           },
           "defaultValue": "\"<a href=\\\"http://leafletjs.com\\\" title=\\\"A JS library for interactive maps\\\">Leaflet</a>\"",
@@ -315,7 +330,7 @@
         },
         {
           "name": "flexToSize",
-          "type": "boolean",
+          "type": "Boolean",
           "description": "Uses flexbox to set the size of the map. Set the parent container\nto use `display: flex;` in your CSS and the map will automatically\nfill the container's available height and width.",
           "privacy": "public",
           "sourceRange": {
@@ -330,7 +345,9 @@
             }
           },
           "metadata": {
-            "polymer": {}
+            "polymer": {
+              "attributeType": "Boolean"
+            }
           },
           "defaultValue": "false",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
@@ -354,6 +371,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.Element"
         },
         {
@@ -373,6 +393,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -392,6 +415,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -445,6 +471,9 @@
               "name": "evt"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -464,6 +493,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.Element"
         },
         {
@@ -483,6 +515,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.Element"
         },
         {
@@ -532,6 +567,9 @@
               "name": "nextOptions"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -570,6 +608,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -589,6 +630,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -666,6 +710,9 @@
               "name": "target"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.Element"
         },
         {
@@ -692,6 +739,9 @@
               "name": "boundEvtEls"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.Element"
         },
         {
@@ -756,6 +806,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -779,6 +832,9 @@
               "name": "evt"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -802,6 +858,9 @@
               "name": "evt"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -821,6 +880,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -844,6 +906,9 @@
               "name": "childEl"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -863,6 +928,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -886,6 +954,9 @@
               "name": "childEl"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -909,6 +980,9 @@
               "name": "childEl"
             }
           ],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.ParentLayer"
         },
         {
@@ -947,6 +1021,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -966,6 +1043,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1047,6 +1127,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1066,6 +1149,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1085,6 +1171,9 @@
           },
           "metadata": {},
           "params": [],
+          "return": {
+            "type": "void"
+          },
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1164,7 +1253,7 @@
             }
           },
           "metadata": {},
-          "type": "number",
+          "type": "Number",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1182,7 +1271,7 @@
             }
           },
           "metadata": {},
-          "type": "number",
+          "type": "Number",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1200,7 +1289,7 @@
             }
           },
           "metadata": {},
-          "type": "number",
+          "type": "Number",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1218,7 +1307,7 @@
             }
           },
           "metadata": {},
-          "type": "number",
+          "type": "Number",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1236,7 +1325,7 @@
             }
           },
           "metadata": {},
-          "type": "number",
+          "type": "Number",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1272,7 +1361,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1290,7 +1379,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1308,7 +1397,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1326,7 +1415,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1344,7 +1433,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1362,7 +1451,7 @@
             }
           },
           "metadata": {},
-          "type": "string",
+          "type": "String",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
         {
@@ -1380,7 +1469,7 @@
             }
           },
           "metadata": {},
-          "type": "boolean",
+          "type": "Boolean",
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         }
       ],
@@ -1388,7 +1477,7 @@
         {
           "type": "CustomEvent",
           "name": "px-map-moved",
-          "description": "px-map-moved",
+          "description": "Fired when the map's centerpoint (lat/lng) or zoom is changed by the user\nor programatically.\n\n{Object} detail - Contains the event details\n{Number} detail.lat - Latitude of the map centerpoint after moving\n{Number} detail.lng - Longitude of the map centerpoint after moving\n{Number} detail.zoom - Zoom level of the map after moving\n{L.LatLngBounds} detail.bounds - Custom Leaflet object describing the visible bounds of the map as a rectangle",
           "metadata": {},
           "inheritedFrom": "PxMapBehavior.LeafletRoot"
         },
@@ -1423,7 +1512,6 @@
           "description": "",
           "name": "",
           "range": {
-            "file": "px-map.html",
             "start": {
               "line": 207,
               "column": 4
@@ -1462,7 +1550,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "attached",
@@ -1479,7 +1570,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "detached",
@@ -1496,7 +1590,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "notifyInstReady",
@@ -1541,7 +1638,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "shouldRemoveInst",
@@ -1558,7 +1658,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "shouldUpdateInst",
@@ -1575,7 +1678,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "createInst",
@@ -1592,7 +1698,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "updateInst",
@@ -1609,7 +1718,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "getInstOptions",
@@ -1626,7 +1738,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "addInst",
@@ -1643,7 +1758,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "removeInst",
@@ -1660,7 +1778,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "extendObj",
@@ -1731,7 +1852,10 @@
                 {
                   "name": "target"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "unbindAllEvents",
@@ -1755,7 +1879,10 @@
                 {
                   "name": "boundEvtEls"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "isShadyScoped",
@@ -1845,6 +1972,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -1862,7 +1992,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "detached",
@@ -1879,7 +2012,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "notifyInstReady",
@@ -1933,7 +2069,10 @@
                 {
                   "name": "parentEl"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "shouldRemoveInst",
@@ -1954,7 +2093,10 @@
                 {
                   "name": "parent"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "shouldUpdateInst",
@@ -1973,6 +2115,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -1992,6 +2137,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -2011,6 +2159,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -2030,6 +2181,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -2051,7 +2205,10 @@
                 {
                   "name": "parent"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "removeInst",
@@ -2072,7 +2229,10 @@
                 {
                   "name": "parent"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "extendObj",
@@ -2149,6 +2309,9 @@
                   "name": "target"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -2175,6 +2338,9 @@
                   "name": "boundEvtEls"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -2284,7 +2450,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "detached",
@@ -2301,7 +2470,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_tryToAddAllChildren",
@@ -2322,7 +2494,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_tryToAddOneChild",
@@ -2343,7 +2518,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_attachLayerChildren",
@@ -2360,7 +2538,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_attachLayerChild",
@@ -2381,7 +2562,10 @@
                 {
                   "name": "childEl"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_detachLayerChildren",
@@ -2398,7 +2582,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_detachLayerChild",
@@ -2419,7 +2606,10 @@
                 {
                   "name": "childEl"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_dereferenceChild",
@@ -2440,7 +2630,10 @@
                 {
                   "name": "childEl"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             }
           ],
           "staticMethods": [],
@@ -2488,14 +2681,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"_fitMapToMarkersIfSet\""
+                  "observer": "\"_fitMapToMarkersIfSet\"",
+                  "attributeType": "Boolean"
                 }
               },
               "defaultValue": "false"
             },
             {
               "name": "fitToMarkersPadding",
-              "type": "number",
+              "type": "Number",
               "description": "Optional setting that only works if `fitToMarkers` is enabled. Adds a\npadding between the edges of the map and the visible markers shown.\nSet to a percentage value (e.g. `0.25` for 25%). Defaults to 15%, setting\nto a lower value will lead to some large markers potentially not fitting\non the map.",
               "privacy": "public",
               "sourceRange": {
@@ -2509,13 +2703,15 @@
                 }
               },
               "metadata": {
-                "polymer": {}
+                "polymer": {
+                  "attributeType": "Number"
+                }
               },
               "defaultValue": "0.15"
             },
             {
               "name": "fitToMarkersZoom",
-              "type": "string",
+              "type": "String",
               "description": "Optional setting that only works if `fitToMarkers` is enabled. Determines\nhow the map will calculate its zoom level when fitting markers.\nChoose from the following options (default is 'max'):\n\n   * 'max' - the map will zoom to the lowest level that fits all markers (but not past the map's `maxZoom`)\n   * 'min' - the map will zoom to the highest level that fits all markers (but not past the map's `minZoom`)",
               "privacy": "public",
               "sourceRange": {
@@ -2529,7 +2725,9 @@
                 }
               },
               "metadata": {
-                "polymer": {}
+                "polymer": {
+                  "attributeType": "String"
+                }
               },
               "defaultValue": "\"max\""
             }
@@ -2554,7 +2752,10 @@
                 {
                   "name": "parent"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "removeInst",
@@ -2575,7 +2776,10 @@
                 {
                   "name": "parent"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleMarkerAdded",
@@ -2596,7 +2800,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleMarkerRemoved",
@@ -2617,7 +2824,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleMarkerGroupUpdated",
@@ -2638,7 +2848,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleMarkerGroupRemoved",
@@ -2659,7 +2872,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_fitMapToMarkers",
@@ -2676,7 +2892,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_markersToBoundsWithPadding",
@@ -2752,7 +2971,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "fitMapToMarkers",
@@ -2822,7 +3044,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "fit-to-markers-zoom",
@@ -2838,7 +3060,7 @@
                 }
               },
               "metadata": {},
-              "type": "string"
+              "type": "String"
             }
           ],
           "events": [],
@@ -2869,12 +3091,14 @@
                 }
               },
               "metadata": {
-                "polymer": {}
+                "polymer": {
+                  "attributeType": "Object"
+                }
               }
             },
             {
               "name": "lat",
-              "type": "number",
+              "type": "Number",
               "description": "The latitude of the active map center. Can be used to set or update\nthe center of the map, or read from after the user moves the map to\nget updated coordinates.",
               "privacy": "public",
               "sourceRange": {
@@ -2890,14 +3114,15 @@
               "metadata": {
                 "polymer": {
                   "notify": true,
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Number"
                 }
               },
               "defaultValue": "37.7672375"
             },
             {
               "name": "lng",
-              "type": "number",
+              "type": "Number",
               "description": "The longitude of the active map center. Can be used to set or update\nthe center of the map, or read from after the user moves the map to\nget updated coordinates.",
               "privacy": "public",
               "sourceRange": {
@@ -2913,14 +3138,15 @@
               "metadata": {
                 "polymer": {
                   "notify": true,
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Number"
                 }
               },
               "defaultValue": "-121.9584131"
             },
             {
               "name": "zoom",
-              "type": "number",
+              "type": "Number",
               "description": "The zoom level of the active map. Can be used to set or update\nthe zoom level of the map, or read from after the user changes the\nmap zoom level to an updated value.",
               "privacy": "public",
               "sourceRange": {
@@ -2936,14 +3162,15 @@
               "metadata": {
                 "polymer": {
                   "notify": true,
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Number"
                 }
               },
               "defaultValue": "10"
             },
             {
               "name": "maxZoom",
-              "type": "number",
+              "type": "Number",
               "description": "The maximum zoom level for the active map (the furthest the user can\nzoom in). Setting it at the map level will take precedence over the\nmax zoom of all other layers, including tile layers. If you need to\nset different zoom bounds based on the visible tile layer, set the\nmax zoom directly on your tile layer.",
               "privacy": "public",
               "sourceRange": {
@@ -2958,13 +3185,14 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Number"
                 }
               }
             },
             {
               "name": "minZoom",
-              "type": "number",
+              "type": "Number",
               "description": "The minimum zoom level for the active map (the furthest the user can\nzoom out). Setting it at the map level will take precedence over the\nmin zoom of all other layers, including tile layers. If you need to\nset different zoom bounds based on the visible tile layer, set the\nmin zoom directly on your tile layer.",
               "privacy": "public",
               "sourceRange": {
@@ -2979,7 +3207,8 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Number"
                 }
               }
             },
@@ -3000,13 +3229,14 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Array"
                 }
               }
             },
             {
               "name": "disableDragging",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Set to disable dragging of the map with the mouse or by touch. Use to\nrestrict changing the map's visible area (e.g. for a static map) or\nto set up a map for being updated programmatically (e.g. through regular\nresponses from an API).",
               "privacy": "public",
               "sourceRange": {
@@ -3021,14 +3251,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Boolean"
                 }
               },
               "defaultValue": "false"
             },
             {
               "name": "disableScrollZoom",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Set to disable zooming with the scroll wheel. Useful if you have a map\nthat takes up the full width of a page and want to allow the user to\nscroll/swipe past without getting stuck in a zoom-in-zoom-out loop.",
               "privacy": "public",
               "sourceRange": {
@@ -3043,14 +3274,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Boolean"
                 }
               },
               "defaultValue": "false"
             },
             {
               "name": "disableTouchZoom",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Set to disable the two-finger zoom gesture on touch devices.",
               "privacy": "public",
               "sourceRange": {
@@ -3065,14 +3297,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Boolean"
                 }
               },
               "defaultValue": "false"
             },
             {
               "name": "disableDoubleClickZoom",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Set to disable zooming on double-click.",
               "privacy": "public",
               "sourceRange": {
@@ -3087,14 +3320,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "Boolean"
                 }
               },
               "defaultValue": "false"
             },
             {
               "name": "disableAttribution",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Set to disable the attribution control, which can be used to show the\nsource of tile layers or other data overlays.\n\nThis property is not dynamic and can only be set once when the map is\nfirst initialized.",
               "privacy": "public",
               "sourceRange": {
@@ -3108,13 +3342,15 @@
                 }
               },
               "metadata": {
-                "polymer": {}
+                "polymer": {
+                  "attributeType": "Boolean"
+                }
               },
               "defaultValue": "false"
             },
             {
               "name": "attributionPrefix",
-              "type": "string",
+              "type": "String",
               "description": "Stringified HTML that will be used as the first item in your attribution\nlist. Pass an <a> tag with a link to more information about your\nattribution source. Example: '<a href=\"https://example.com\">Example</a>'\n\nDefaults to a link to the Leaflet.js library. If an empty string is\npassed (\"\") the prefix will be hidden.",
               "privacy": "public",
               "sourceRange": {
@@ -3129,14 +3365,15 @@
               },
               "metadata": {
                 "polymer": {
-                  "observer": "\"shouldUpdateInst\""
+                  "observer": "\"shouldUpdateInst\"",
+                  "attributeType": "String"
                 }
               },
               "defaultValue": "\"<a href=\\\"http://leafletjs.com\\\" title=\\\"A JS library for interactive maps\\\">Leaflet</a>\""
             },
             {
               "name": "flexToSize",
-              "type": "boolean",
+              "type": "Boolean",
               "description": "Uses flexbox to set the size of the map. Set the parent container\nto use `display: flex;` in your CSS and the map will automatically\nfill the container's available height and width.",
               "privacy": "public",
               "sourceRange": {
@@ -3150,7 +3387,9 @@
                 }
               },
               "metadata": {
-                "polymer": {}
+                "polymer": {
+                  "attributeType": "Boolean"
+                }
               },
               "defaultValue": "false"
             }
@@ -3173,6 +3412,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -3190,7 +3432,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "detached",
@@ -3207,7 +3452,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "notifyInstReady",
@@ -3258,7 +3506,10 @@
                 {
                   "name": "evt"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "shouldRemoveInst",
@@ -3277,6 +3528,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -3296,6 +3550,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -3341,7 +3598,10 @@
                 {
                   "name": "nextOptions"
                 }
-              ]
+              ],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "getInstOptions",
@@ -3375,7 +3635,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "removeInst",
@@ -3392,7 +3655,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "extendObj",
@@ -3469,6 +3735,9 @@
                   "name": "target"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -3495,6 +3764,9 @@
                   "name": "boundEvtEls"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.Element"
             },
             {
@@ -3559,6 +3831,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3582,6 +3857,9 @@
                   "name": "evt"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3605,6 +3883,9 @@
                   "name": "evt"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3624,6 +3905,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3647,6 +3931,9 @@
                   "name": "childEl"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3666,6 +3953,9 @@
               },
               "metadata": {},
               "params": [],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3689,6 +3979,9 @@
                   "name": "childEl"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3712,6 +4005,9 @@
                   "name": "childEl"
                 }
               ],
+              "return": {
+                "type": "void"
+              },
               "inheritedFrom": "PxMapBehavior.ParentLayer"
             },
             {
@@ -3746,7 +4042,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_updateMapView",
@@ -3763,7 +4062,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_canBeNum",
@@ -3838,7 +4140,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleZoomStart",
@@ -3855,7 +4160,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "_handleZoomEnd",
@@ -3872,7 +4180,10 @@
                 }
               },
               "metadata": {},
-              "params": []
+              "params": [],
+              "return": {
+                "type": "void"
+              }
             },
             {
               "name": "getVisibleMarkers",
@@ -3941,7 +4252,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "lng",
@@ -3957,7 +4268,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "zoom",
@@ -3973,7 +4284,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "max-zoom",
@@ -3989,7 +4300,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "min-zoom",
@@ -4005,7 +4316,7 @@
                 }
               },
               "metadata": {},
-              "type": "number"
+              "type": "Number"
             },
             {
               "name": "max-bounds",
@@ -4037,7 +4348,7 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             },
             {
               "name": "disable-scroll-zoom",
@@ -4053,7 +4364,7 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             },
             {
               "name": "disable-touch-zoom",
@@ -4069,7 +4380,7 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             },
             {
               "name": "disable-double-click-zoom",
@@ -4085,7 +4396,7 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             },
             {
               "name": "disable-attribution",
@@ -4101,7 +4412,7 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             },
             {
               "name": "attribution-prefix",
@@ -4117,7 +4428,7 @@
                 }
               },
               "metadata": {},
-              "type": "string"
+              "type": "String"
             },
             {
               "name": "flex-to-size",
@@ -4133,14 +4444,14 @@
                 }
               },
               "metadata": {},
-              "type": "boolean"
+              "type": "Boolean"
             }
           ],
           "events": [
             {
               "type": "CustomEvent",
               "name": "px-map-moved",
-              "description": "px-map-moved",
+              "description": "Fired when the map's centerpoint (lat/lng) or zoom is changed by the user\nor programatically.\n\n{Object} detail - Contains the event details\n{Number} detail.lat - Latitude of the map centerpoint after moving\n{Number} detail.lng - Longitude of the map centerpoint after moving\n{Number} detail.zoom - Zoom level of the map after moving\n{L.LatLngBounds} detail.bounds - Custom Leaflet object describing the visible bounds of the map as a rectangle",
               "metadata": {}
             },
             {

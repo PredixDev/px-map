@@ -289,6 +289,12 @@ $px-map-marker-locate-icon-accuracy-opacity:        var(--px-map-marker-locate-i
 .leaflet-bar.leaflet-control.leaflet-control-zoom {
   a.leaflet-control-zoom-in,
   a.leaflet-control-zoom-out {
+    &.leaflet-disabled {
+      cursor: no-drop;
+      color: $px-map-control-button-text-color--disabled;
+      border-color: $px-map-control-button-border-color--disabled;
+    }
+
     @extend %map-control-button;
     @extend %map-control-button--round;
     position: relative;

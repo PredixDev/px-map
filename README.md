@@ -151,4 +151,4 @@ Navigate to the root of that server (e.g. http://localhost:8080/) in a browser t
 
 ## Known Issues
 
-Please use [Github Issues](https://github.com/PredixDev/px-map/issues) to submit any bugs you might find.
+Please use [Github Issues](https://github.com/predixdesignsystem/px-map/issues) to submit any bugs you might find.

@@ -32,6 +32,9 @@
     "web-component-tester": "^6.7.1",
     "yargs": "^6.0.0"
   },
+  "resolutions": {
+    "natives": "1.1.6"
+  },
   "scripts": {
     "start": "gulp serve",
     "test": "wct",

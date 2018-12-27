@@ -386,7 +386,7 @@ describe('px-map with fit-to-markers enabled', function() {
       var spy = sinon.spy(mapEl, '_getZoomLevelForFit');
       var fakeMap = {
         getMinZoom: sinon.stub().returns(5),
-        getBoundsZoom: sinon.stub().returns(12)
+        getBoundsZoom: sinon.stub().returns(11)
       };
       var fakeBounds = sinon.stub();
 
@@ -394,7 +394,7 @@ describe('px-map with fit-to-markers enabled', function() {
       expect(callWithMin).to.eql(5); // should equal map.getMinZoom()
 
       var callWithMax = mapEl._getZoomLevelForFit(fakeBounds, 'max', fakeMap);
-      expect(callWithMax).to.eql(11); // should equal map.getBoundsZoom() - 1
+      expect(callWithMax).to.eql(11); // should equal map.getBoundsZoom()
     });
 
     it('corretly sets its view', function() {

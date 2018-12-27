@@ -233,12 +233,10 @@
      */
     _getZoomLevelForFit(bounds, fitSetting, map) {
       if (fitSetting === 'min') {
-        let zoom = map.getMinZoom() || 0;
-        return zoom;
+        return map.getMinZoom() || 0;
       }
       if (fitSetting === 'max') {
-        let zoom = map.getBoundsZoom(bounds, true) - 1;
-        return zoom;
+        return map.getBoundsZoom(bounds);
       }
     },
 

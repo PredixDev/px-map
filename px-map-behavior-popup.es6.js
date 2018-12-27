@@ -47,6 +47,7 @@
       maxWidth: {
         type: Number,
         value: 400,
+        observer: 'shouldUpdateInst'
       },
 
       /**
@@ -55,6 +56,7 @@
       minWidth: {
         type: Number,
         value: 300,
+        observer: 'shouldUpdateInst'
       },
 
       /**
@@ -109,6 +111,12 @@
         } else if (!nextOptions.opened && this.elementInst.isOpen()) {
           this.elementInst._source.closePopup();
         }
+      }
+      if (nextOptions.minWidth !== lastOptions.minWidth || nextOptions.maxWidth !== lastOptions.maxWidth) {
+        const minWidth = nextOptions.minWidth || lastOptions.minWidth;
+        const maxWidth = nextOptions.maxWidth || lastOptions.maxWidth;
+        
+        this.elementInst.updateSettings({minWidth, maxWidth})
       }
     },
 
@@ -421,7 +429,8 @@
 
     updateSettings(settings={}) {
       Object.assign(this.settings, settings);
-      const { title, description, imgSrc, styleScope } = this.settings;
+      const { title, description, imgSrc, minWidth, maxWidth } = this.settings;
+      Object.assign(this.options, { minWidth, maxWidth });
       const content = this._generatePopupContent(title, description, imgSrc);
 
       this.setContent(content);
@@ -547,7 +556,8 @@
 
     updateSettings(settings={}) {
       Object.assign(this.settings, settings);
-      const { title, data } = this.settings;
+      const { title, data, minWidth, maxWidth } = this.settings;
+      Object.assign(this.options, { minWidth, maxWidth });
       const content = this._generatePopupContent(title, data);
 
       if (this.isOpen() && Object.keys(data).length === 0) {

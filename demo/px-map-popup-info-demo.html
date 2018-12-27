@@ -65,7 +65,7 @@ limitations under the License.
           attribution-prefix='<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | &copy; <a href="http://osm.org/copyright">OpenStreetMap contributors</a>'>
           <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
           <px-map-marker-static lat="42.3518414" lng="-71.0500149" type="info">
-            <px-map-popup-info min-width="200" title="{{props.title.value}}" description="{{props.description.value}}"></px-map-popup-info>
+            <px-map-popup-info min-width="{{props.minWidth.value}}" max-width="{{props.maxWidth.value}}" title="{{props.title.value}}" description="{{props.description.value}}"></px-map-popup-info>
           </px-map-marker-static>
         </px-map>
       </div>
@@ -171,6 +171,20 @@ limitations under the License.
           type: String,
           defaultValue: 'The new GE Corporate headquarters in Boston will be known as GE Innovation Point.',
           inputType: 'text'
+        },
+
+        minWidth: {
+          inputLabel: 'Minimum width (in px)',
+          type: Number,
+          defaultValue: 350,
+          inputType: 'number'
+        },
+
+        maxWidth: {
+          inputLabel: 'Maximum width (in px)',
+          type: Number,
+          defaultValue: 400,
+          inputType: 'number'
         },
 
         parentComponent: {

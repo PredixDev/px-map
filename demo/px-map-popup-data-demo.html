@@ -70,7 +70,8 @@ limitations under the License.
           <px-map-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></px-map-tile-layer>
           <px-map-marker-static lat="37.7673626" lng="-121.9595048" type="info">
             <px-map-popup-data
-              min-width="350"
+              min-width="{{props.minWidth.value}}"
+              max-width="{{props.maxWidth.value}}"
               title="{{props.title.value}}"
               data="{{props.data.value}}">
             </px-map-popup-data>
@@ -179,6 +180,20 @@ limitations under the License.
           type: Object,
           defaultValue: { "Employees" : "2000", "Parking" : "Yes", "Snacks" : "Yes", "Gym" : "No" },
           inputType: 'code:JSON'
+        },
+
+        minWidth: {
+          inputLabel: 'Minimum width (in px)',
+          type: Number,
+          defaultValue: 350,
+          inputType: 'number'
+        },
+
+        maxWidth: {
+          inputLabel: 'Maximum width (in px)',
+          type: Number,
+          defaultValue: 500,
+          inputType: 'number'
         },
 
         parentComponent: {

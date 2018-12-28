@@ -116,6 +116,27 @@ describe('PxMap.InfoPopup class', function () {
 
     expect(content).to.include(NEW_TITLE_TEXT);
   });
+
+  it('inherits the default minimum and maximum width when created without these parameters', function() {
+    var popup = new PxMap.InfoPopup({});
+
+    var defaultMin = PxMapBehavior.PopupImpl.properties.minWidth.value;
+    var defaultMax = PxMapBehavior.PopupImpl.properties.maxWidth.value;
+
+    // Test leaflet props
+    expect(popup.options.minWidth).to.equal(defaultMin);
+    expect(popup.options.maxWidth).to.equal(defaultMax);
+  });
+
+  it('applies the minimum and maximum width values when specified', function() {
+    var minWidth = 123;
+    var maxWidth = 456;
+    var popup = new PxMap.InfoPopup({ minWidth: minWidth, maxWidth: maxWidth });
+
+    // Test leaflet props
+    expect(popup.options.minWidth).to.equal(minWidth);
+    expect(popup.options.maxWidth).to.equal(maxWidth);
+  });
 });
 
 /*
@@ -191,6 +212,27 @@ describe('PxMap.DataPopup class', function () {
     expect(content).to.include('Other Thing');
     expect(content).to.include('New Value');
     expect(content).to.include('999');
+  });
+
+  it('inherits the default minimum and maximum width when created without these parameters', function() {
+    var popup = new PxMap.DataPopup({});
+
+    var defaultMin = PxMapBehavior.PopupImpl.properties.minWidth.value;
+    var defaultMax = PxMapBehavior.PopupImpl.properties.maxWidth.value;
+
+    // Test leaflet props
+    expect(popup.options.minWidth).to.equal(defaultMin);
+    expect(popup.options.maxWidth).to.equal(defaultMax);
+  });
+
+  it('applies the minimum and maximum width values when specified', function() {
+    var minWidth = 321;
+    var maxWidth = 654;
+    var popup = new PxMap.DataPopup({ minWidth: minWidth, maxWidth: maxWidth });
+
+    // Test leaflet props
+    expect(popup.options.minWidth).to.equal(minWidth);
+    expect(popup.options.maxWidth).to.equal(maxWidth);
   });
 });
 

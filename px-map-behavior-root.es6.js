@@ -19,6 +19,13 @@
   'use strict';
 
   /****************************************************************************
+   * CONSTANTS
+   ****************************************************************************/
+
+  const MIN_SUPPORTED_ZOOM_LEVEL = 0;
+  const MAX_SUPPORTED_ZOOM_LEVEL = 18;
+
+  /****************************************************************************
    * BEHAVIORS
    ****************************************************************************/
 
@@ -233,7 +240,7 @@
      */
     _getZoomLevelForFit(bounds, fitSetting, map) {
       if (fitSetting === 'min') {
-        let zoom = map.getMinZoom() || 0;
+        let zoom = map.getMinZoom() || MIN_SUPPORTED_ZOOM_LEVEL;
         return zoom;
       }
       if (fitSetting === 'max') {
@@ -356,6 +363,38 @@
       minZoom: {
         type: Number,
         observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * If set, respects the configured minimum and maximum zoom levels even if they fall outside
+       * the supported bounds of any children layers.
+       *
+       * @type {Boolean}
+       */
+      unclampZoomToLayers: {
+        type: Boolean,
+        value: false,
+        observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Tracks the highest minimum zoom level supported by all children layers.
+       *
+       * @type {Number}
+       */
+      _clampedMinZoom: {
+        type: Number,
+        value: MIN_SUPPORTED_ZOOM_LEVEL
+      },
+
+      /**
+       * Tracks the lowest maximum zoom level supported by all children layers.
+       *
+       * @type {Number}
+       */
+      _clampedMaxZoom: {
+        type: Number,
+        value: MAX_SUPPORTED_ZOOM_LEVEL
       },
 
       /**
@@ -537,7 +576,10 @@
       const mapMoveFn = this._handleMapMove.bind(this);
       const zoomStartFn = this._handleZoomStart.bind(this);
       const zoomEndFn = this._handleZoomEnd.bind(this);
-      const addLayerFn = this._clampZoomForLayer;
+      const addLayerFn = (evt) => {
+        if (evt.layer && evt.layer.options) 
+          this._clampZoomForLayer(evt.layer.options.minZoom, evt.layer.options.maxZoom);
+      }
       this.bindEvents({
         'moveend' : mapMoveFn,
         'zoomstart' : zoomStartFn,
@@ -563,8 +605,8 @@
       options.crs = this.crs || L.CRS.EPSG3857;
       options.center = [this.lat, this.lng];
       options.zoom = this.zoom;
-      options.minZoom = this.minZoom || 0;
-      options.maxZoom = this.maxZoom || 18;
+      options.minZoom = this.minZoom || MIN_SUPPORTED_ZOOM_LEVEL;
+      options.maxZoom = this.maxZoom || MAX_SUPPORTED_ZOOM_LEVEL;
       options.maxBounds = this.maxBounds || undefined;
 
       options.dragging = !this.disableDragging;
@@ -573,6 +615,7 @@
       options.doubleClickZoom = !this.disableDoubleClickZoom;
       options.attributionControl = !this.disableAttribution;
       options.attributionPrefix = this.attributionPrefix;
+      options.unclampZoomToLayers = this.unclampZoomToLayers;
 
       return options;
     },
@@ -586,13 +629,31 @@
       }
 
       if (lastOptions.maxZoom !== nextOptions.maxZoom && !isNaN(nextOptions.maxZoom)) {
-        this.setMaxZoom(nextOptions.maxZoom);
+        this.elementInst.setMaxZoom(Math.min(nextOptions.maxZoom, this._clampedMaxZoom));
       }
       if (lastOptions.minZoom !== nextOptions.minZoom && !isNaN(nextOptions.minZoom)) {
-        this.setMinZoom(nextOptions.minZoom);
+        this.elementInst.setMinZoom(Math.max(nextOptions.minZoom, this._clampedMinZoom));
       }
       if (lastOptions.maxBounds !== nextOptions.maxBounds && !isNaN(nextOptions.maxBounds)) {
-        this.setMaxBounds(nextOptions.maxBounds);
+        this.elementInst.setMaxBounds(nextOptions.maxBounds);
+      }
+      if (lastOptions.unclampZoomToLayers !== nextOptions.unclampZoomToLayers) {
+        if (nextOptions.unclampZoomToLayers) {
+          // Reset clamped values
+          this._clampedMinZoom = MIN_SUPPORTED_ZOOM_LEVEL;
+          this._clampedMaxZoom = MAX_SUPPORTED_ZOOM_LEVEL;
+          // Revert min/max zoom level to user specified values
+          this.elementInst.setMinZoom(nextOptions.minZoom || MIN_SUPPORTED_ZOOM_LEVEL);
+          this.elementInst.setMaxZoom(nextOptions.maxZoom || MAX_SUPPORTED_ZOOM_LEVEL);
+        } else {
+          this.elementInst.eachLayer(layer => {
+            if (layer.options)
+              this._clampZoomForLayer(layer.options.minZoom, layer.options.maxZoom);
+          });
+        }
+
+
+        this.elementInst.options.unclampZoomToLayers = nextOptions.unclampZoomToLayers;
       }
 
       if (!lastOptions.dragging && nextOptions.dragging) {
@@ -642,14 +703,18 @@
      * Overrides the configured min/max zoom levels if they fall outside
      * the supported bounds for a layer.
      */
-    _clampZoomForLayer(evt) {
-      if (!evt.layer || !evt.layer.options) return;
+    _clampZoomForLayer(minZoom, maxZoom) {
+      if (this.unclampZoomToLayers) return;
 
-      if (evt.layer.options.minZoom > this.options.minZoom) 
-        this.options.minZoom = evt.layer.options.minZoom;
+      if (minZoom > this.elementInst.options.minZoom) {
+        this.elementInst.setMinZoom(minZoom);
+        this._clampedMinZoom = minZoom;
+      } 
 
-      if (evt.layer.options.maxZoom < this.options.maxZoom) 
-        this.options.maxZoom = evt.layer.options.maxZoom;
+      if (maxZoom < this.elementInst.options.maxZoom) {
+        this.elementInst.setMaxZoom(maxZoom);
+        this._clampedMaxZoom = maxZoom;
+      } 
     },
 
     /**

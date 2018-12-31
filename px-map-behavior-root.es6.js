@@ -533,14 +533,16 @@
         this.scopeSubtree(this.$.map, true);
       }
 
-      // Bind custom events for the map intance. Events will be unbound automatically.
+      // Bind custom events for the map instance. Events will be unbound automatically.
       const mapMoveFn = this._handleMapMove.bind(this);
       const zoomStartFn = this._handleZoomStart.bind(this);
       const zoomEndFn = this._handleZoomEnd.bind(this);
+      const addLayerFn = this._clampZoomForLayer;
       this.bindEvents({
         'moveend' : mapMoveFn,
         'zoomstart' : zoomStartFn,
-        'zoomend' : zoomEndFn
+        'zoomend' : zoomEndFn,
+        'layeradd' : addLayerFn
       });
     },
 
@@ -634,6 +636,20 @@
       if (!this.elementInst) return;
 
       this.elementInst.invalidateSize();
+    },
+
+    /**
+     * Overrides the configured min/max zoom levels if they fall outside
+     * the supported bounds for a layer.
+     */
+    _clampZoomForLayer(evt) {
+      if (!evt.layer || !evt.layer.options) return;
+
+      if (evt.layer.options.minZoom > this.options.minZoom) 
+        this.options.minZoom = evt.layer.options.minZoom;
+
+      if (evt.layer.options.maxZoom < this.options.maxZoom) 
+        this.options.maxZoom = evt.layer.options.maxZoom;
     },
 
     /**

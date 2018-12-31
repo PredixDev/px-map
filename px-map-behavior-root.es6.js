@@ -652,7 +652,6 @@
           });
         }
 
-
         this.elementInst.options.unclampZoomToLayers = nextOptions.unclampZoomToLayers;
       }
 

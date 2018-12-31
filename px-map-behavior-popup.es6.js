@@ -389,10 +389,14 @@
 
     // Note `createPopup` is an internet explorer native method, but deprecated
     // so hopefully it won't cause grief
-    _createPopup(settings={}) {
+    _createPopup({title = null,
+                  description = null,
+                  imgSrc = null,
+                  styleScope = null,
+                  minWidth = PxMapBehavior.PopupImpl.properties.minWidth.value,
+                  maxWidth = PxMapBehavior.PopupImpl.properties.maxWidth.value}={}) {
       // Assign settings and create content
-      this.settings = settings;
-      const { title, description, imgSrc, styleScope, maxWidth, minWidth } = settings;
+      this.settings = { title, description, imgSrc, styleScope, minWidth, maxWidth };
       const content = this._generatePopupContent(title, description, imgSrc);
       const className = `map-popup-info ${styleScope||''}`
 
@@ -402,7 +406,7 @@
 
     _generatePopupContent(title, description, imgSrc) {
       let tmplFnIf = (fn, ...vals) =>
-        vals.length && vals[0] !== undefined ? fn.call(this, ...vals) : '';
+        vals.length && vals[0] != null ? fn.call(this, ...vals) : '';
 
       let imgTmpl = (imgSrc) => `
         <div class="map-box-info__image">
@@ -510,9 +514,13 @@
 
     // Note `createPopup` is an internet explorer native method, but deprecated
     // so hopefully it won't cause grief
-    _createPopup(settings={}, config={}) {
-      this.settings = settings;
-      const { title, data, styleScope, maxWidth, minWidth } = settings;
+    _createPopup({title = null,
+                  data = null,
+                  styleScope = null,
+                  minWidth = PxMapBehavior.PopupImpl.properties.minWidth.value,
+                  maxWidth = PxMapBehavior.PopupImpl.properties.maxWidth.value}={}) {
+      // Merge defaults into settings param
+      this.settings = { title, data, styleScope, minWidth, maxWidth };
       const content = this._generatePopupContent(title, data);
 
       const className = `map-popup-data ${styleScope||''}`
@@ -523,7 +531,7 @@
 
     _generatePopupContent(title, data) {
       let tmplFnIf = (fn, ...vals) =>
-        vals.length && vals[0] !== undefined ? fn.call(this, ...vals) : '';
+        vals.length && vals[0] != null ? fn.call(this, ...vals) : '';
 
       let titleTmpl = (title) => `
         <div class="map-data-box__header">

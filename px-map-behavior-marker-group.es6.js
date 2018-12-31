@@ -851,12 +851,7 @@
     _bindAndOpenPopup(marker) {
       if (!marker || !marker.bindPopup || !marker.openPopup) return;
 
-      const defaults = {
-        minWidth: PxMapBehavior.PopupImpl.properties.minWidth.value,
-        maxWidth: PxMapBehavior.PopupImpl.properties.maxWidth.value
-      }
-
-      const popupSettings = Object.assign(defaults, this._featSettingsToProps(marker.featureProperties['marker-popup'], 'popup'));
+      const popupSettings = this._featSettingsToProps(marker.featureProperties['marker-popup'], 'popup');
       if (!popupSettings || !Object.keys(popupSettings).length) return;
 
       const klassName = (popupSettings._Base && PxMap.hasOwnProperty(popupSettings._Base)) ? popupSettings._Base : 'InfoPopup';

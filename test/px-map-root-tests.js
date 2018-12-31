@@ -81,6 +81,120 @@ describe('Basic px-map without options', function () {
   });
 });
 
+describe('Basic px-map with zoom clamping enabled', function () {
+  var mapEl;
+
+  beforeEach(function(done) {
+    mapEl = fixture('BasicMapFixture');
+
+    flushAndRender(() => {
+      mapEl.elementInst.fire('layeradd', {
+        layer: {
+          options: {
+            minZoom: 3,
+            maxZoom: 6
+          }
+        }
+      });
+      done();
+    });
+  });
+
+  it('clamps zoom to min/max supported zoom bounds when adding layers', function() {
+    expect(mapEl.elementInst.options.minZoom).to.be.equal(3);
+    expect(mapEl.elementInst.options.maxZoom).to.be.equal(6);
+  });
+
+  it('respects zoom clamps when setting new minimum zoom level', function(done) {
+    mapEl.minZoom = 1;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.minZoom).to.be.equal(3);
+      done();
+    });
+  });
+
+  it('respects zoom clamps when setting new maximum zoom level', function(done) {
+    mapEl.maxZoom = 7;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.maxZoom).to.be.equal(6);
+      done();
+    });
+  });
+
+  it('allows changes to minZoom if within clamp bounds', function(done) {
+    mapEl.minZoom = 4;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.minZoom).to.be.equal(4);
+      done();
+    });
+  });
+
+  it('allows changes to maxZoom if within clamp bounds', function(done) {
+    mapEl.maxZoom = 5;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.maxZoom).to.be.equal(5);
+      done();
+    });
+  });
+
+  it('reverts to original zoom bounds when clamping is disabled', function(done) {
+    mapEl.unclampZoomToLayers = true;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.minZoom).to.be.equal(0);
+      expect(mapEl.elementInst.options.maxZoom).to.be.equal(18);
+      done();
+    });
+  });
+})
+
+describe('Basic px-map with zoom clamping disabled', function () {
+  var mapEl;
+
+  beforeEach(function(done) {
+    mapEl = fixture('DisableZoomClamps');
+
+    flushAndRender(() => {
+      mapEl.elementInst.fire('layeradd', {
+        layer: {
+          options: {
+            minZoom: 3,
+            maxZoom: 6
+          }
+        }
+      });
+      done();
+    }, 3);
+  });
+
+  it('does not clamp zoom when new layers are added', function() {
+    expect(mapEl.elementInst.options.minZoom).to.be.equal(0);
+    expect(mapEl.elementInst.options.maxZoom).to.be.equal(18);
+  });
+
+  it('ignores zoom clamps when setting new minimum zoom level', function(done) {
+    mapEl.minZoom = 1;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.minZoom).to.be.equal(1);
+      done();
+    });
+  });
+
+  it('ignores zoom clamps when setting new maximum zoom level', function(done) {
+    mapEl.maxZoom = 7;
+
+    flushAndRender(() => {
+      expect(mapEl.elementInst.options.maxZoom).to.be.equal(7);
+      done();
+    });
+  });
+})
+
 describe('Basic px-map with all zooming disabled', function () {
   var mapEl;
 
@@ -397,7 +511,7 @@ describe('px-map with fit-to-markers enabled', function() {
       expect(callWithMax).to.eql(11); // should equal map.getBoundsZoom() - 1
     });
 
-    it('corretly sets its view', function() {
+    it('correctly sets its view', function() {
       var CENTER = [1,2];
       var ZOOM = 7;
 

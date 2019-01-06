@@ -274,4 +274,28 @@ describe('px-map-marker-group colors', function () {
       done();
     }, 3);
   });
+
+  it('clears all markers if marker-group has an empty feature array', function(done) {
+    var fx = fixture('MarkerClusterWithDefaultColors');
+
+    flushAndRender(() => {
+      var markerGroup = Polymer.dom(fx.root).querySelector('px-map').querySelector('px-map-marker-group');
+
+      // Verify marker group is currently rendering features from fixture
+      expect(markerGroup.elementInst.getLayers().length).to.not.equal(0);
+
+      // Set data to an empty feature collection and verify marker group clears existing markers
+      var emptyFeatureCol = {
+        type: "FeatureCollection",
+        features: []
+      };
+      markerGroup.data = emptyFeatureCol;
+
+      flushAndRender(() => {
+        // Validate that leaflet's rendering no layers for this marker group
+        expect(markerGroup.elementInst.getLayers().length).to.equal(0);
+        done();
+      });
+    })
+  })
 });

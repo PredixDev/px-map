@@ -344,8 +344,7 @@
         (typeof this.data !== 'object') ||
         (this.data.type !== 'FeatureCollection') ||
         (!Array.isArray(this.data.features)) ||
-        !this.data.features.length ||
-        (typeof this.data.features[0] !== 'object')
+        (this.data.features[0] && typeof this.data.features[0] !== 'object')
       );
 
       if (dataIsNotValid) {
@@ -548,7 +547,11 @@
      * @return {Set} features
      */
     _syncDataWithMarkers(newFeatures, clusterInst) {
-      if (!newFeatures.length) return;
+      if (!newFeatures.length) {
+        // If the features array is empty, clear markers and return
+        this._clearAllMarkersAndData(clusterInst);
+        return;
+      };
 
       const featuresSet = this._features = (this._features || new Set());
       const markersMap = this._markers = (this._markers || new WeakMap());

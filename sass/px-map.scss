@@ -307,9 +307,11 @@ $px-map-marker-locate-icon-accuracy-opacity:        var(--px-map-marker-locate-i
 // Set background and border style
 .leaflet-control-scale-line {
   background: none;
-  font-size: $inuit-base-font-size;
+  font-size: var(--px-map-scale-font-size, 0.9rem);
+  text-align: center;
   border-width: 1px;
   border-color: $black;
+  padding: calculateRem(2px) 0 calculateRem(1px);
 
   &:not(:first-child) {
     border-top: 1px solid $black;

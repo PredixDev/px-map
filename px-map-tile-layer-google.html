@@ -119,18 +119,6 @@ If you do not provide an API key, the map will not load any tiles.
         type: Array,
         value: function() {return [];},
         observer: 'shouldUpdateInst'
-      },
-
-      /**
-       * Opacity of the layer. Particularly useful for reducing the intensity
-       * of colour from satellite imagery. Values between 0.0 amd 1.0
-       * This is exposed Leaflet behaviour inherited from GridLayer, see:
-       * https://leafletjs.com/reference-1.4.0.html#gridlayer.
-       */
-      opacity: {
-        type: Number,
-        value: 1.0,
-        observer: 'shouldUpdateInst'
       }
     },
 
@@ -158,18 +146,18 @@ If you do not provide an API key, the map will not load any tiles.
       if (lastOptions.mapStyleHash !== nextOptions.mapStyleHash) {
         this.elementInst.setMapStyle(nextOptions.mapStyle);
       }
+      this.superUpdateInst(lastOptions, nextOptions);
     },
 
     getInstOptions: function() {
-      return {
+      return Object.assign(this.superGetInstOptions(), {
         GoogleTileAPIKey: this.key,
         imagery: this.imagery,
         language: this.language,
         region: this.region,
         mapStyle: this.mapStyle,
-        mapStyleHash: JSON.stringify(this.mapStyle || []),
-        opacity: this.opacity
-      };
+        mapStyleHash: JSON.stringify(this.mapStyle || [])
+      });
     }
   });
 </script>

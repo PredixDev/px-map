@@ -31,6 +31,20 @@
    * @polymerBehavior PxMapBehavior.Layer
    */
   PxMapBehavior.LayerImpl = {
+    properties: {
+      /**
+       * Opacity of the layer. Particularly useful for reducing the intensity
+       * of colour from satellite imagery. Values between 0.0 amd 1.0
+       * This is exposed Leaflet behaviour inherited from GridLayer, see:
+       * https://leafletjs.com/reference-1.4.0.html#gridlayer.
+       */
+      opacity: {
+        type: Number,
+        value: 1.0,
+        observer: 'shouldUpdateInst'
+      }
+    },
+
     // When this element is attached to the DOM, fire an event to notify
     // a parent that it is ready
 
@@ -77,6 +91,18 @@
 
     removeInst(parent) {
       this.elementInst.remove();
+    },
+
+    superGetInstOptions: function() {
+      return {
+        opacity: this.opacity
+      };
+    },
+
+    superUpdateInst: function(lastOptions, nextOptions) {
+      if (lastOptions.opacity !== nextOptions.opacity) {
+        this.elementInst.setOpacity(nextOptions.opacity);
+      }
     },
 
     /**

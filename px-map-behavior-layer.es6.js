@@ -93,13 +93,13 @@
       this.elementInst.remove();
     },
 
-    superGetInstOptions: function() {
+    getInstOptions: function() {
       return {
         opacity: this.opacity
       };
     },
 
-    superUpdateInst: function(lastOptions, nextOptions) {
+    updateInst: function(lastOptions, nextOptions) {
       if (lastOptions.opacity !== nextOptions.opacity) {
         this.elementInst.setOpacity(nextOptions.opacity);
       }

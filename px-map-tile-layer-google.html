@@ -146,11 +146,11 @@ If you do not provide an API key, the map will not load any tiles.
       if (lastOptions.mapStyleHash !== nextOptions.mapStyleHash) {
         this.elementInst.setMapStyle(nextOptions.mapStyle);
       }
-      this.superUpdateInst(lastOptions, nextOptions);
+      PxMapBehavior.LayerImpl.updateInst.call(this, lastOptions, nextOptions);
     },
 
     getInstOptions: function() {
-      return Object.assign(this.superGetInstOptions(), {
+      return Object.assign(PxMapBehavior.LayerImpl.getInstOptions.call(this), {
         GoogleTileAPIKey: this.key,
         imagery: this.imagery,
         language: this.language,

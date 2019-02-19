@@ -62,6 +62,16 @@
         type: Boolean,
         value: false,
         observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Opacity of the layer. Particularly useful for reducing the intensity
+       * of color from satellite imagery. Accepts values between 0.0 and 1.0.
+       */
+      opacity: {
+        type: Number,
+        value: 1.0,
+        observer: 'shouldUpdateInst'
       }
     },
 
@@ -77,11 +87,15 @@
       if (lastOptions.url !== nextOptions.url) {
         this.elementInst.setUrl(nextOptions.url);
       }
+      if (lastOptions.opacity !== nextOptions.opacity) {
+        this.elementInst.setOpacity(nextOptions.opacity);
+      }
     },
 
     getInstOptions() {
       return {
-        url: this.decodeUrl ? decodeURI(this.url) : this.url
+        url: this.decodeUrl ? decodeURI(this.url) : this.url,
+        opacity: this.opacity
       };
     }
   };

@@ -106,6 +106,16 @@ If you do not provide an API key, the map will not load any tiles.
         type: String,
         value: 'en-US',
         observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Opacity of the layer. Particularly useful for reducing the intensity
+       * of color from satellite imagery. Accepts values between 0.0 and 1.0.
+       */
+      opacity: {
+        type: Number,
+        value: 1.0,
+        observer: 'shouldUpdateInst'
       }
     },
 
@@ -134,6 +144,9 @@ If you do not provide an API key, the map will not load any tiles.
           this.elementInst.enableAttribution();
         }
       }
+      if (lastOptions.opacity !== nextOptions.opacity) {
+        this.elementInst.setOpacity(nextOptions.opacity);
+      }
     },
 
     getInstOptions: function() {
@@ -141,7 +154,8 @@ If you do not provide an API key, the map will not load any tiles.
         bingMapsKey: this.key,
         imagerySet: this.imagery,
         culture: this.languageCode,
-        noAttribution: this.disableAttribution
+        noAttribution: this.disableAttribution,
+        opacity: this.opacity
       };
     }
   });

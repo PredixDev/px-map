@@ -133,6 +133,16 @@ instructions on how to configure it to request WMS tiles [on the Leaflet website
         type: String,
         value: '',
         observer: 'shouldUpdateInst'
+      },
+
+      /**
+       * Opacity of the layer. Particularly useful for reducing the intensity
+       * of color from satellite imagery. Accepts values between 0.0 and 1.0.
+       */
+      opacity: {
+        type: Number,
+        value: 1.0,
+        observer: 'shouldUpdateInst'
       }
     },
 
@@ -150,6 +160,9 @@ instructions on how to configure it to request WMS tiles [on the Leaflet website
       }
       if (lastOptions.wmsOptionsHash !== nextOptions.wmsOptionsHash) {
         this.elementInst.setParams(nextOptions.wmsOptions);
+      }
+      if (lastOptions.opacity !== nextOptions.opacity) {
+        this.elementInst.setOpacity(nextOptions.opacity);
       }
     },
 
@@ -174,7 +187,8 @@ instructions on how to configure it to request WMS tiles [on the Leaflet website
       return {
         url: this.url,
         wmsOptions: wmsOptions,
-        wmsOptionsHash: JSON.stringify(wmsOptions)
+        wmsOptionsHash: JSON.stringify(wmsOptions),
+        opacity: this.opacity
       };
     }
   });
